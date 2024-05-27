@@ -1,7 +1,6 @@
 [package]
-name = "leetcode"
+name = "linked"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-linked = { path = "linked" }

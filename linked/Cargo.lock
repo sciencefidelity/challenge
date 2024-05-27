@@ -3,12 +3,5 @@
 version = 3
 
 [[package]]
-name = "leetcode"
-version = "0.1.0"
-dependencies = [
- "linked",
-]
-
-[[package]]
 name = "linked"
 version = "0.1.0"
