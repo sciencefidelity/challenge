@@ -32,7 +32,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn two_case_1() {
+    fn case_1() {
         let l1 = ListNode::from(vec![1, 2, 4]);
         let l2 = ListNode::from(vec![1, 3, 4]);
         let list = ListNode::from(vec![1, 1, 2, 3, 4, 4]);
@@ -40,7 +40,7 @@ mod tests {
     }
 
     #[test]
-    fn two_case_2() {
+    fn case_2() {
         let l1 = ListNode::from(vec![]);
         let l2 = ListNode::from(vec![]);
         let list = ListNode::from(vec![]);
@@ -48,7 +48,7 @@ mod tests {
     }
 
     #[test]
-    fn two_case_3() {
+    fn case_3() {
         let l1 = ListNode::from(vec![]);
         let l2 = ListNode::from(vec![0]);
         let list = ListNode::from(vec![0]);

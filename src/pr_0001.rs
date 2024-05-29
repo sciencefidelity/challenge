@@ -21,19 +21,19 @@ mod tests {
     use super::*;
 
     #[test]
-    fn one_case_1() {
+    fn case_1() {
         let nums = vec![2, 7, 11, 15];
         assert_eq!(Solution::two_sum(nums, 9), [0, 1]);
     }
 
     #[test]
-    fn one_case_2() {
+    fn case_2() {
         let nums = vec![3, 2, 4];
         assert_eq!(Solution::two_sum(nums, 6), [1, 2]);
     }
 
     #[test]
-    fn one_case_3() {
+    fn case_3() {
         let nums = vec![3, 3];
         assert_eq!(Solution::two_sum(nums, 6), [0, 1]);
     }
