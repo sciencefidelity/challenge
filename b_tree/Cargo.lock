@@ -5,15 +5,3 @@ version = 3
 [[package]]
 name = "b_tree"
 version = "0.1.0"
-
-[[package]]
-name = "leetcode"
-version = "0.1.0"
-dependencies = [
- "b_tree",
- "linked",
-]
-
-[[package]]
-name = "linked"
-version = "0.1.0"
