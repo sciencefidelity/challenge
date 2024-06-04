@@ -9,6 +9,13 @@ type Tree = Option<Rc<RefCell<TreeNode>>>;
 
 impl Solution {
     pub fn invert_tree(root: Tree) -> Tree {
+        if let Some(root) = &root {
+            if let Ok(mut root) = root.try_borrow_mut() {
+                let right = root.right.clone();
+                root.right = Solution::invert_tree(root.left.clone());
+                root.left = Solution::invert_tree(right);
+            }
+        }
         root
     }
 }
@@ -19,19 +26,19 @@ mod tests {
 
     #[test]
     fn case_1() {
-        let tree = Some(Rc::new(RefCell::new(TreeNode::new(0))));
-        assert_eq!(Solution::invert_tree(tree.clone()), tree);
+        todo!();
+        // assert_eq!(Solution::invert_tree(root.clone()), root);
     }
 
     #[test]
     fn case_2() {
-        let tree = Some(Rc::new(RefCell::new(TreeNode::new(0))));
-        assert_eq!(Solution::invert_tree(tree.clone()), tree);
+        todo!();
+        // assert_eq!(Solution::invert_tree(tree.clone()), tree);
     }
 
     #[test]
     fn case_3() {
-        let tree = Some(Rc::new(RefCell::new(TreeNode::new(0))));
-        assert_eq!(Solution::invert_tree(tree.clone()), tree);
+        let root = None;
+        assert_eq!(Solution::invert_tree(root), None);
     }
 }
