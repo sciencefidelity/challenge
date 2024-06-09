@@ -10,13 +10,13 @@ impl Solution {
     }
 
     pub fn gcd_of_strings(str1: String, str2: String) -> String {
-        if format!("{str1}{str2}") != format!("{str2}{str1}") {
-            return String::new();
+        match concat!("{str1}", "{str2}") != concat!("{str2}", "{str1}") {
+            true => String::new(),
+            false => {
+                let gcd_length = Self::gcd(str1.len(), str2.len());
+                str1[..gcd_length].to_owned()
+            }
         }
-
-        let gcd_length = Self::gcd(str1.len(), str2.len());
-        println!("{}", gcd_length);
-        str1[..gcd_length].to_owned()
     }
 }
 
