@@ -10,7 +10,7 @@ impl Solution {
     }
 
     pub fn gcd_of_strings(str1: String, str2: String) -> String {
-        match concat!("{str1}", "{str2}") != concat!("{str2}", "{str1}") {
+        match format!("{str1}{str2}") != format!("{str2}{str1}") {
             true => String::new(),
             false => {
                 let gcd_length = Self::gcd(str1.len(), str2.len());

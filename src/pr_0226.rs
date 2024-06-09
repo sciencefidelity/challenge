@@ -25,12 +25,14 @@ mod tests {
     use super::*;
 
     #[test]
+    #[ignore = "not yet implemented"]
     fn case_1() {
         todo!();
         // assert_eq!(Solution::invert_tree(root.clone()), root);
     }
 
     #[test]
+    #[ignore = "not yet implemented"]
     fn case_2() {
         todo!();
         // assert_eq!(Solution::invert_tree(tree.clone()), tree);
