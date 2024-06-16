@@ -1,3 +1,4 @@
+#![feature(iter_intersperse)]
 pub mod pr_0001;
 pub mod pr_0002;
 pub mod pr_0009;
@@ -5,9 +6,12 @@ pub mod pr_0020;
 pub mod pr_0021;
 pub mod pr_0121;
 pub mod pr_0125;
+pub mod pr_0151;
 pub mod pr_0226;
 pub mod pr_0238;
 pub mod pr_0242;
+pub mod pr_0283;
+pub mod pr_0334;
 pub mod pr_0345;
 pub mod pr_0605;
 pub mod pr_0704;
