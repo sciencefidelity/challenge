@@ -27,3 +27,4 @@ strip = "symbols"
 [dependencies]
 b_tree = { path = "b_tree" }
 linked = { path = "linked" }
+rand = "0.8.5"
