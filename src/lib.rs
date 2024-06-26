@@ -26,6 +26,7 @@ pub mod pr_0189;
 pub mod pr_0226;
 pub mod pr_0238;
 pub mod pr_0242;
+pub mod pr_0274;
 pub mod pr_0283;
 pub mod pr_0334;
 pub mod pr_0345;
