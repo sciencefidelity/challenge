@@ -59,6 +59,7 @@ pub mod pr_1552;
 pub mod pr_1679;
 pub mod pr_1732;
 pub mod pr_1768;
+pub mod pr_1791;
 pub mod pr_2215;
 pub mod pr_3146;
 pub mod pr_3190;
