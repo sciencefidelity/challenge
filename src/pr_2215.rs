@@ -28,10 +28,14 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(
-            Solution::find_difference(vec![1, 2, 3], vec![2, 4, 6]),
-            vec![vec![1, 3], vec![4, 6]]
-        );
+        let solution = Solution::find_difference(vec![1, 2, 3], vec![2, 4, 6]);
+        assert_eq!(solution.len(), 2);
+        assert_eq!(solution[0].len(), 2);
+        assert_eq!(solution[1].len(), 2);
+        assert!(solution[0].contains(&1));
+        assert!(solution[0].contains(&3));
+        assert!(solution[1].contains(&4));
+        assert!(solution[1].contains(&6));
     }
 
     #[test]
