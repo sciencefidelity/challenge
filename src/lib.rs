@@ -2,6 +2,7 @@
 #![feature(iter_intersperse)]
 pub mod pr_0001;
 pub mod pr_0002;
+pub mod pr_0006;
 pub mod pr_0009;
 pub mod pr_0011;
 pub mod pr_0013;
@@ -75,6 +76,7 @@ pub mod pr_1431;
 pub mod pr_1438;
 pub mod pr_1456;
 pub mod pr_1482;
+pub mod pr_1509;
 pub mod pr_1550;
 pub mod pr_1552;
 pub mod pr_1579;
@@ -82,6 +84,7 @@ pub mod pr_1679;
 pub mod pr_1732;
 pub mod pr_1768;
 pub mod pr_1791;
+pub mod pr_2181;
 pub mod pr_2192;
 pub mod pr_2215;
 pub mod pr_2285;
