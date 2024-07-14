@@ -3,12 +3,13 @@ pub struct Solution;
 use std::cmp::Ordering::{Equal, Greater, Less};
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn survived_robots_healths(
         positions: Vec<i32>,
         mut healths: Vec<i32>,
         directions: String,
     ) -> Vec<i32> {
-        let directions = directions.as_bytes();
+        let directions = directions.into_bytes();
         let mut robots = (0..positions.len()).collect::<Vec<_>>();
 
         robots.sort_unstable_by_key(|&i| positions[i]);

@@ -1,6 +1,6 @@
 pub struct Solution;
 
-/// Fermat Theorem
+// Fermat Theorem
 impl Solution {
     pub fn judge_square_sum(mut c: i32) -> bool {
         let mut i = 2;
@@ -21,7 +21,7 @@ impl Solution {
     }
 }
 
-/// Binary Search (fails for big numbers)
+// Binary Search (fails for big numbers)
 // impl Solution {
 //     pub fn judge_square_sum(c: i32) -> bool {
 //         let mut a = 0;
@@ -34,7 +34,7 @@ impl Solution {
 //         }
 //         false
 //     }
-//
+
 //     fn binary_search(s: i32, e: i32, n: i32) -> bool {
 //         if s > e {
 //             return false;

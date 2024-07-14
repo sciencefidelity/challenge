@@ -13,8 +13,13 @@ impl AddAssign for Coordinates {
 }
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn spiral_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {
-        let (columns, rows) = (matrix[0].len() as isize, matrix.len() as isize);
+        let (columns, rows) = (
+            isize::try_from(matrix[0].len()).unwrap(),
+            isize::try_from(matrix.len()).unwrap(),
+        );
+
         let mut spiral_order = Vec::with_capacity(matrix.len() * matrix[0].len());
         let directions = [
             Coordinates(1, 0),
@@ -30,9 +35,12 @@ impl Solution {
         let mut direction = direction_iter.next().unwrap();
 
         for _ in 0..rows * columns {
-            spiral_order.push(matrix[coordinates.1 as usize][coordinates.0 as usize]);
+            spiral_order.push(
+                matrix[usize::try_from(coordinates.1).unwrap()]
+                    [usize::try_from(coordinates.0).unwrap()],
+            );
 
-            if Self::is_border(&columns, &rows, &round, &coordinates, &direction) {
+            if Self::is_border(columns, rows, round, &coordinates, &direction) {
                 direction = direction_iter.next().unwrap();
                 if direction == directions[3] {
                     round += 1;
@@ -44,17 +52,17 @@ impl Solution {
     }
 
     fn is_border(
-        columns: &isize,
-        rows: &isize,
-        round: &isize,
+        columns: isize,
+        rows: isize,
+        round: isize,
         coordinates: &Coordinates,
         direction: &Coordinates,
     ) -> bool {
         match direction {
-            Coordinates(1, 0) if coordinates.0 == columns - 1 - *round => true,
-            Coordinates(0, 1) if coordinates.1 == rows - 1 - *round => true,
-            Coordinates(-1, 0) if coordinates.0 == *round => true,
-            Coordinates(0, -1) if coordinates.1 == *round => true,
+            Coordinates(1, 0) if coordinates.0 == columns - 1 - round => true,
+            Coordinates(0, 1) if coordinates.1 == rows - 1 - round => true,
+            Coordinates(-1, 0) if coordinates.0 == round => true,
+            Coordinates(0, -1) if coordinates.1 == round => true,
             _ => false,
         }
     }

@@ -31,7 +31,6 @@ enum Group {
 
 impl Solution {
     pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
-        use Group::*;
         let mut set = HashSet::new();
 
         for (r_idx, r_val) in board.iter().enumerate() {
@@ -40,9 +39,9 @@ impl Solution {
                     continue;
                 }
                 let b_idx = 3 * (r_idx / 3) + c_idx / 3;
-                if !set.insert((Horizontal, r_idx, c_val))
-                    || !set.insert((Vertical, c_idx, c_val))
-                    || !set.insert((Box, b_idx, c_val))
+                if !set.insert((Group::Horizontal, r_idx, c_val))
+                    || !set.insert((Group::Vertical, c_idx, c_val))
+                    || !set.insert((Group::Box, b_idx, c_val))
                 {
                     return false;
                 }

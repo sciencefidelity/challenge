@@ -4,7 +4,7 @@ impl Solution {
     pub fn minimum_operations(nums: Vec<i32>) -> i32 {
         let mut ops = 0;
         let divisor = 3;
-        for num in nums.iter() {
+        for num in nums {
             let rem = num % divisor;
             match rem {
                 1 | 2 => ops += 1,

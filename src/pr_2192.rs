@@ -4,12 +4,12 @@ pub struct Solution;
 
 impl Solution {
     pub fn get_ancestors(n: i32, edges: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-        let n = n as usize;
+        let n = usize::try_from(n).unwrap();
         let mut adjacency_list = vec![Vec::new(); n];
         let mut indegree = vec![0; n];
         for edge in edges {
-            let from = edge[0] as usize;
-            let to = edge[1] as usize;
+            let from = usize::try_from(edge[0]).unwrap();
+            let to = usize::try_from(edge[1]).unwrap();
             adjacency_list[from].push(to);
             indegree[to] += 1;
         }
@@ -17,15 +17,16 @@ impl Solution {
         let mut nodes_with_zero_in_degree = indegree
             .iter()
             .enumerate()
-            .filter_map(|(i, &degree)| (degree == 0).then(|| i))
+            .filter(|(_, &degree)| degree == 0)
+            .map(|(i, _)| i)
             .collect::<VecDeque<usize>>();
         while let Some(current_node) = nodes_with_zero_in_degree.pop_front() {
-            ancestors_list[current_node].sort();
+            ancestors_list[current_node].sort_unstable();
             ancestors_list[current_node].dedup();
-            for &neighbor in adjacency_list[current_node].iter() {
+            for &neighbor in &adjacency_list[current_node] {
                 let ancestors = ancestors_list[current_node].clone();
                 ancestors_list[neighbor].extend(ancestors);
-                ancestors_list[neighbor].push(current_node as i32);
+                ancestors_list[neighbor].push(i32::try_from(current_node).unwrap());
                 indegree[neighbor] -= 1;
                 if indegree[neighbor] == 0 {
                     nodes_with_zero_in_degree.push_back(neighbor);

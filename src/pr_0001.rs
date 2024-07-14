@@ -4,15 +4,16 @@ use std::collections::HashMap;
 
 impl Solution {
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-        let mut map = HashMap::new();
-        for (i, &num) in nums.iter().enumerate() {
+        let mut map = HashMap::with_capacity(nums.len());
+        let mut result = Vec::with_capacity(2);
+        nums.into_iter().enumerate().for_each(|(i, num)| {
             let diff = target - num;
-            if let Some(&diff_index) = map.get(&diff) {
-                return vec![diff_index, i as i32];
+            if let Some(&i_diff) = map.get(&diff) {
+                return result = vec![i_diff, i32::try_from(i).unwrap()];
             }
-            map.insert(num, i as i32);
-        }
-        vec![]
+            map.insert(num, i32::try_from(i).unwrap());
+        });
+        result
     }
 }
 

@@ -5,9 +5,9 @@ impl Solution {
         nums.sort_unstable();
         let mut left = 0;
         let mut right = nums.len() - 1;
-        let mut min_average: f64 = f64::MAX;
+        let mut min_average = f64::MAX;
         while left < right {
-            min_average = min_average.min((nums[left] + nums[right]) as f64 / 2.0);
+            min_average = min_average.min(f64::from(nums[left] + nums[right]) / 2.0);
             left += 1;
             right -= 1;
         }

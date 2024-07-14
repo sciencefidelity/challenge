@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn is_valid(s: String) -> bool {
         let mut stack: Vec<char> = Vec::new();
         for c in s.chars() {
@@ -13,17 +14,14 @@ impl Solution {
                 _ => continue,
             }
         }
-        match stack.len() {
-            0 => true,
-            _ => false,
-        }
+        matches!(stack.len(), 0)
     }
 
-    fn is_match(opening_brace: char, closing_brace: char) -> bool {
-        match (opening_brace, closing_brace) {
-            ('(', ')') | ('[', ']') | ('{', '}') => true,
-            _ => false,
-        }
+    const fn is_match(opening_brace: char, closing_brace: char) -> bool {
+        matches!(
+            (opening_brace, closing_brace),
+            ('(', ')') | ('[', ']') | ('{', '}')
+        )
     }
 }
 

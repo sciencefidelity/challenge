@@ -2,12 +2,13 @@ pub struct Solution;
 
 impl Solution {
     pub fn jump(nums: Vec<i32>) -> i32 {
+        let n = nums.len();
         let (mut max_distance, mut current_pos, mut jumps) = (0, 0, 0);
-        for i in 0..nums.len() {
-            if i == nums.len() - 1 {
+        for (i, num) in nums.into_iter().enumerate() {
+            if i == n - 1 {
                 break;
             }
-            max_distance = max_distance.max(i + nums[i] as usize);
+            max_distance = max_distance.max(i + usize::try_from(num).unwrap());
             if i == current_pos {
                 jumps += 1;
                 current_pos = max_distance;

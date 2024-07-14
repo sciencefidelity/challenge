@@ -3,7 +3,7 @@ pub struct Solution;
 impl Solution {
     pub fn max_sub_array(nums: Vec<i32>) -> i32 {
         let (mut max_so_far, mut max_ending_here) = (nums[0], nums[0]);
-        for &num in nums.iter().skip(1) {
+        for num in nums.into_iter().skip(1) {
             max_ending_here = num.max(max_ending_here + num);
             max_so_far = max_so_far.max(max_ending_here);
         }

@@ -3,16 +3,17 @@ use std::collections::HashMap;
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn length_of_longest_substring(s: String) -> i32 {
         let mut map = HashMap::new();
         let (mut left, mut right, mut answer) = (-1, 0, 0);
-        for b in s.bytes() {
+        s.bytes().for_each(|b| {
             if let Some(last) = map.insert(b, right) {
                 left = left.max(last);
             }
             answer = answer.max(right - left);
             right += 1;
-        }
+        });
         answer
     }
 }

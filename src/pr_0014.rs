@@ -2,7 +2,9 @@ pub struct Solution;
 
 impl Solution {
     pub fn longest_common_prefix(strs: Vec<String>) -> String {
-        if !strs.is_empty() {
+        if strs.is_empty() {
+            String::new()
+        } else {
             strs.into_iter()
                 .reduce(|acc, cur| {
                     acc.chars()
@@ -12,8 +14,6 @@ impl Solution {
                         .collect()
                 })
                 .unwrap()
-        } else {
-            "".to_owned()
         }
     }
 }

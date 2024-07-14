@@ -1,20 +1,21 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
         let mut l = 0;
         let mut r = nums.len();
         while l != r {
             let m = (l + r) / 2;
             if nums[m] == target {
-                return m as i32;
+                return i32::try_from(m).unwrap();
             } else if nums[m] < target {
                 l = m + 1;
             } else {
                 r = m;
             }
         }
-        l as i32
+        i32::try_from(l).unwrap()
     }
 }
 

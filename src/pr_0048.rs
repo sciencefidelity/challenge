@@ -59,6 +59,7 @@ pub struct Solution;
 // }
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn rotate(matrix: &mut Vec<Vec<i32>>) {
         matrix.reverse();
 

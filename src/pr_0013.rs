@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn roman_to_int(s: String) -> i32 {
         s.bytes().rfold(0, |acc, c| {
             acc + match c {

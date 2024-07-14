@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn number_of_alternating_groups(colors: Vec<i32>) -> i32 {
         let mut groups = 0;
         let first = colors[0];

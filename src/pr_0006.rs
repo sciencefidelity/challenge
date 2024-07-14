@@ -1,18 +1,19 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn convert(s: String, num_rows: i32) -> String {
         let mut step = if num_rows == 1 { 0 } else { -1 };
-        let mut rows: Vec<String> = vec![String::new(); num_rows as usize];
-        let mut i = 0i32;
+        let mut rows: Vec<String> = vec![String::new(); usize::try_from(num_rows).unwrap()];
+        let mut i = 0_i32;
 
-        for c in s.chars() {
-            rows[i as usize].push(c);
-            if i == 0 || i == (num_rows as i32 - 1) {
+        s.chars().for_each(|c| {
+            rows[usize::try_from(i).unwrap()].push(c);
+            if i == 0 || i == num_rows - 1 {
                 step = -step;
             }
             i += step;
-        }
+        });
         rows.join("")
     }
 }

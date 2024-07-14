@@ -6,7 +6,7 @@ type List = Option<Box<ListNode>>;
 
 impl Solution {
     pub fn add_two_numbers(l1: List, l2: List) -> List {
-        return Self::add_two_numbers_recursive(l1, l2, 0);
+        Self::add_two_numbers_recursive(l1, l2, 0)
     }
 
     pub fn add_two_numbers_recursive(l1: List, l2: List, carry: i32) -> List {

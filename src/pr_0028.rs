@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn str_str(haystack: String, needle: String) -> i32 {
         if needle.len() > haystack.len() {
             return -1;

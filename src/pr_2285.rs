@@ -2,22 +2,20 @@ pub struct Solution;
 
 impl Solution {
     pub fn maximum_importance(n: i32, roads: Vec<Vec<i32>>) -> i64 {
-        let mut degree: Vec<i64> = vec![0; n as usize];
+        let mut degree = vec![0; n as usize];
 
-        for edge in roads {
-            degree[edge[0] as usize] += 1;
-            degree[edge[1] as usize] += 1;
-        }
-
+        roads.iter().for_each(|edge| {
+            degree[usize::try_from(edge[0]).unwrap()] += 1;
+            degree[usize::try_from(edge[1]).unwrap()] += 1;
+        });
         degree.sort_unstable();
 
-        let mut value: i64 = 1;
-        let mut total_importance: i64 = 0;
-        for d in degree {
+        let mut value = 1;
+        let mut total_importance = 0;
+        degree.iter().for_each(|d| {
             total_importance += value * d;
             value += 1;
-        }
-
+        });
         total_importance
     }
 }

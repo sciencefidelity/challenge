@@ -20,9 +20,9 @@
         devShells.default = mkShell {
           buildInputs = [
             pkg-config
-            (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
+            (rust-bin.stable.latest.default.override {
               extensions = [ "rust-analyzer" "rust-src" ];
-            }))
+            })
           ];
 
           shellHook = ''
@@ -31,3 +31,4 @@
       }
     );
 }
+

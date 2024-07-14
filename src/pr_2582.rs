@@ -1,7 +1,7 @@
 pub struct Solution;
 
 impl Solution {
-    pub fn pass_the_pillow(n: i32, time: i32) -> i32 {
+    pub const fn pass_the_pillow(n: i32, time: i32) -> i32 {
         let full_rounds = time / (n - 1);
         let extra_time = time % (n - 1);
         if full_rounds % 2 == 0 {

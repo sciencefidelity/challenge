@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn can_jump(nums: Vec<i32>) -> bool {
         let mut highest_index = 0;
         let mut current_index = 0;
@@ -9,7 +10,8 @@ impl Solution {
             if nums[current_index] == 0 && highest_index <= current_index {
                 return false;
             }
-            highest_index = highest_index.max(current_index + nums[current_index] as usize);
+            highest_index =
+                highest_index.max(current_index + usize::try_from(nums[current_index]).unwrap());
             current_index += 1;
         }
 

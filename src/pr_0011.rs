@@ -1,12 +1,13 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn max_area(height: Vec<i32>) -> i32 {
         let mut left = 0;
         let mut right = height.len() - 1;
         let mut max = 0;
         while left < right {
-            max = max.max(height[left].min(height[right]) * (right - left) as i32);
+            max = max.max(height[left].min(height[right]) * i32::try_from(right - left).unwrap());
             if height[left] > height[right] {
                 right -= 1;
             } else {
