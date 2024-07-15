@@ -8,6 +8,7 @@ use std::rc::Rc;
 type Tree = Option<Rc<RefCell<TreeNode>>>;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn is_balanced(root: Tree) -> bool {
         Self::dfs(&root).is_some()
     }

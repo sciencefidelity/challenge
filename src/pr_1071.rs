@@ -2,20 +2,19 @@ pub struct Solution;
 
 impl Solution {
     fn gcd(x: usize, y: usize) -> usize {
-        println!("{x} {y}");
         match y {
-            0 => return x,
-            _ => return Self::gcd(y, x % y),
+            0 => x,
+            _ => Self::gcd(y, x % y),
         }
     }
 
+    #[allow(clippy::needless_pass_by_value)]
     pub fn gcd_of_strings(str1: String, str2: String) -> String {
-        match format!("{str1}{str2}") != format!("{str2}{str1}") {
-            true => String::new(),
-            false => {
-                let gcd_length = Self::gcd(str1.len(), str2.len());
-                str1[..gcd_length].to_owned()
-            }
+        if format!("{str1}{str2}") == format!("{str2}{str1}") {
+            let gcd_length = Self::gcd(str1.len(), str2.len());
+            str1[..gcd_length].to_owned()
+        } else {
+            String::new()
         }
     }
 }

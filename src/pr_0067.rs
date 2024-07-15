@@ -3,6 +3,7 @@ pub struct Solution;
 use std::collections::VecDeque;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn add_binary(a: String, b: String) -> String {
         let n = a.len().max(b.len());
         let mut iter_a = a.chars();

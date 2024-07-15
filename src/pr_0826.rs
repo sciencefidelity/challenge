@@ -1,25 +1,27 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn max_profit_assignment(difficulty: Vec<i32>, profit: Vec<i32>, worker: Vec<i32>) -> i32 {
         let max_ability = worker.iter().max().unwrap();
-        let mut jobs = vec![0; *max_ability as usize + 1];
+        let mut jobs = vec![0; usize::try_from(*max_ability + 1).unwrap()];
 
-        for i in 0..difficulty.len() {
-            if difficulty[i] <= *max_ability {
-                jobs[difficulty[i] as usize] = jobs[difficulty[i] as usize].max(profit[i]);
+        for (i, d) in difficulty.into_iter().enumerate() {
+            if d <= *max_ability {
+                jobs[usize::try_from(d).unwrap()] =
+                    jobs[usize::try_from(d).unwrap()].max(profit[i]);
             }
         }
 
         for i in 1..=*max_ability {
-            jobs[i as usize] = jobs[i as usize].max(jobs[(i - 1) as usize]);
+            jobs[usize::try_from(i).unwrap()] =
+                jobs[usize::try_from(i).unwrap()].max(jobs[usize::try_from(i - 1).unwrap()]);
         }
 
         let mut net_profit = 0;
         for ability in worker {
-            net_profit += jobs[ability as usize];
+            net_profit += jobs[usize::try_from(ability).unwrap()];
         }
-
         net_profit
     }
 }

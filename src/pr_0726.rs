@@ -3,6 +3,7 @@ pub struct Solution;
 use std::collections::BTreeMap;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn count_of_atoms(formula: String) -> String {
         let mut muls = vec![0; formula.len()];
         let mut stack = Vec::with_capacity(formula.len());
@@ -26,7 +27,6 @@ impl Solution {
             }
             muls[formula.len() - 1 - i] = running_mul;
         }
-        println!("{}", running_mul);
         let mut final_map: BTreeMap<String, i32> = BTreeMap::new();
         let mut formula_iter = formula.chars().enumerate().peekable();
         while let Some((i, c)) = formula_iter.next() {
@@ -45,22 +45,20 @@ impl Solution {
                     curr_count.push(formula_iter.peek().unwrap().1);
                     formula_iter.next();
                 }
-                let count = if curr_count.len() > 0 {
-                    curr_count.parse().unwrap()
-                } else {
+                let count = if curr_count.is_empty() {
                     1
+                } else {
+                    curr_count.parse().unwrap()
                 };
                 *final_map.entry(curr_atom).or_insert(0) += count * muls[i];
             }
         }
-        println!("{muls:?}");
         let mut answer = String::new();
-        let mut final_map_iter = final_map.iter();
-        while let Some((key, val)) = final_map_iter.next() {
-            let atom = if *val > 1 {
+        for (key, val) in final_map {
+            let atom = if val > 1 {
                 format!("{key}{val}")
             } else {
-                format!("{key}")
+                key.to_string()
             };
             answer.push_str(atom.as_str());
         }

@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn length_of_last_word(s: String) -> i32 {
         s.trim_end()
             .bytes()

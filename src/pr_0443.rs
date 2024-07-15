@@ -14,15 +14,15 @@ impl Solution {
             chars[j] = c;
             j += 1;
             if (i - left) > 1 {
-                let num = (i - left).to_string().into_bytes();
-                for i in 0..num.len() {
-                    chars[j] = num[i] as char;
+                let nums = (i - left).to_string().into_bytes();
+                for num in nums {
+                    chars[j] = num as char;
                     j += 1;
                 }
             }
         }
         chars.truncate(j);
-        chars.len() as i32
+        i32::try_from(chars.len()).unwrap()
     }
 }
 

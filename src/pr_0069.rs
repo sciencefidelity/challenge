@@ -5,12 +5,12 @@ impl Solution {
         if x == 0 {
             return 0;
         }
-        let mut x = x as i64;
+        let mut x = i64::from(x);
         let a = x;
         while x > a / x {
             x = (x + a / x) / 2;
         }
-        x as i32
+        i32::try_from(x).unwrap()
     }
 }
 

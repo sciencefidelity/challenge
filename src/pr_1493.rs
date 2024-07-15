@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn longest_subarray(nums: Vec<i32>) -> i32 {
         let (mut longest, mut left, mut deleted) = (0, 0, 0);
         for right in 0..nums.len() {

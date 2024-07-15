@@ -1,7 +1,7 @@
 pub struct Solution;
 
 impl Solution {
-    pub fn hamming_weight(mut n: i32) -> i32 {
+    pub const fn hamming_weight(mut n: i32) -> i32 {
         let mut ones = 0;
         while n != 0 {
             n &= n - 1;

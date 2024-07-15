@@ -5,6 +5,7 @@ use linked::ListNode;
 type List = Option<Box<ListNode>>;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn middle_node(head: List) -> List {
         let (mut slow, mut fast) = (&head, &head);
         while let Some(ListNode {

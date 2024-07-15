@@ -37,7 +37,7 @@ impl Solution {
         }
         for i in 0..p.len() {
             for j in (i + 1)..p.len() {
-                let target = -1 * (p[i] + p[j]);
+                let target = -(p[i] + p[j]);
                 if set_n.contains(&target) {
                     let mut vec = vec![p[i], p[j], target];
                     vec.sort_unstable();

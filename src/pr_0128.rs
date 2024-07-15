@@ -6,7 +6,7 @@ impl Solution {
     pub fn longest_consecutive(nums: Vec<i32>) -> i32 {
         let nums: HashSet<i32> = HashSet::from_iter(nums);
         let mut res = 0;
-        for num in nums.iter() {
+        for num in &nums {
             if !nums.contains(&(num - 1)) {
                 let mut count = num + 1;
                 while nums.contains(&count) {

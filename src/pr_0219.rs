@@ -4,9 +4,9 @@ use std::collections::HashMap;
 
 impl Solution {
     pub fn contains_nearby_duplicate(nums: Vec<i32>, k: i32) -> bool {
-        let k = k as usize;
+        let k = usize::try_from(k).unwrap();
         let mut map = HashMap::new();
-        for (i, num) in nums.iter().enumerate() {
+        for (i, num) in nums.into_iter().enumerate() {
             if let Some(j) = map.insert(num, i) {
                 if i - j <= k {
                     return true;

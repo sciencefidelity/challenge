@@ -32,6 +32,7 @@ pub struct Solution;
 // }
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn reverse_parentheses(s: String) -> String {
         Self::to_stack(&mut s.chars(), false).into_iter().collect()
     }

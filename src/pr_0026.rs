@@ -1,8 +1,8 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::ptr_arg)]
     pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
-        #[allow(clippy::needless_pass_by_value)]
         let mut low = 1;
         for high in 1..nums.len() {
             if nums[low - 1] < nums[high] {

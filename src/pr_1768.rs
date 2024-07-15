@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn merge_alternately(word1: String, word2: String) -> String {
         let mut iter1 = word1.chars();
         let mut iter2 = word2.chars();

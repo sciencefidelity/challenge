@@ -2,12 +2,12 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_num_edges_to_remove(n: i32, edges: Vec<Vec<i32>>) -> i32 {
-        let n = n as usize;
+        let n = usize::try_from(n).unwrap();
         let mut alice_parents = (0..=n).collect::<Vec<usize>>();
         let mut bob_parents = alice_parents.clone();
         let mut alice_size = n;
         let mut bob_size = n;
-        let total_edges = edges.len() as i32;
+        let total_edges = i32::try_from(edges.len()).unwrap();
         let mut removed_edges = 0;
 
         let mut edges_type1 = Vec::new();
@@ -16,8 +16,8 @@ impl Solution {
 
         for edge in edges {
             let edge_type = edge[0];
-            let u = edge[1] as usize;
-            let v = edge[2] as usize;
+            let u = usize::try_from(edge[1]).unwrap();
+            let v = usize::try_from(edge[2]).unwrap();
 
             match edge_type {
                 1 => edges_type1.push((u, v)),
@@ -26,21 +26,21 @@ impl Solution {
             }
         }
 
-        for (u, v) in edges_type3.iter() {
-            if Self::union(*u, *v, &mut alice_parents, &mut alice_size) {
-                Self::union(*u, *v, &mut bob_parents, &mut bob_size);
+        for (u, v) in edges_type3 {
+            if Self::union(u, v, &mut alice_parents, &mut alice_size) {
+                Self::union(u, v, &mut bob_parents, &mut bob_size);
                 removed_edges += 1;
             }
         }
 
-        for (u, v) in edges_type1.iter() {
-            if Self::union(*u, *v, &mut alice_parents, &mut alice_size) {
+        for (u, v) in edges_type1 {
+            if Self::union(u, v, &mut alice_parents, &mut alice_size) {
                 removed_edges += 1;
             }
         }
 
-        for (u, v) in edges_type2.iter() {
-            if Self::union(*u, *v, &mut bob_parents, &mut bob_size) {
+        for (u, v) in edges_type2 {
+            if Self::union(u, v, &mut bob_parents, &mut bob_size) {
                 removed_edges += 1;
             }
         }
@@ -62,12 +62,12 @@ impl Solution {
     fn union(node1: usize, node2: usize, parents: &mut Vec<usize>, size: &mut usize) -> bool {
         let root1 = Self::find(node1, parents);
         let root2 = Self::find(node2, parents);
-        if root1 != root2 {
+        if root1 == root2 {
+            false
+        } else {
             *size -= 1;
             parents[root2] = root1;
             true
-        } else {
-            false
         }
     }
 }

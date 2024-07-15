@@ -3,8 +3,9 @@ pub struct Solution;
 use std::collections::VecDeque;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn max_vowels(s: String, k: i32) -> i32 {
-        let k = k as usize;
+        let k = usize::try_from(k).unwrap();
         let mut queue = VecDeque::new();
         let mut count = 0;
         let mut max = 0;
@@ -25,11 +26,8 @@ impl Solution {
         max
     }
 
-    fn is_vowel(c: char) -> bool {
-        match c {
-            'a' | 'e' | 'i' | 'o' | 'u' => true,
-            _ => false,
-        }
+    const fn is_vowel(c: char) -> bool {
+        matches!(c, 'a' | 'e' | 'i' | 'o' | 'u')
     }
 }
 

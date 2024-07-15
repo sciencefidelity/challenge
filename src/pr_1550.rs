@@ -3,8 +3,8 @@ pub struct Solution;
 impl Solution {
     pub fn three_consecutive_odds(arr: Vec<i32>) -> bool {
         let mut consecutive_odds = 0;
-        for i in 0..arr.len() {
-            if Self::is_odd(arr[i]) {
+        for item in arr {
+            if Self::is_odd(item) {
                 consecutive_odds += 1;
             } else {
                 consecutive_odds = 0;
@@ -16,7 +16,7 @@ impl Solution {
         false
     }
 
-    fn is_odd(num: i32) -> bool {
+    const fn is_odd(num: i32) -> bool {
         num % 2 != 0
     }
 }

@@ -3,6 +3,7 @@ pub struct Solution;
 use std::collections::HashMap;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn is_isomorphic(s: String, t: String) -> bool {
         let mut s_map = HashMap::new();
         let mut t_map = HashMap::new();

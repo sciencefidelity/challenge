@@ -17,10 +17,10 @@ impl Solution {
             };
             if next_node.val > 0 {
                 curr_node.val += next_node.val;
-                curr_node.next = next_node.next.take()
+                curr_node.next = next_node.next.take();
             } else {
                 curr_node.next = next_node.next.take();
-                next_sum = &mut next_sum.as_mut().unwrap().next
+                next_sum = &mut next_sum.as_mut().unwrap().next;
             }
         }
         head.unwrap().next

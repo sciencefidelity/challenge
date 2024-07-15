@@ -3,6 +3,7 @@ pub struct Solution;
 use std::collections::HashMap;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn can_construct(ransom_note: String, magazine: String) -> bool {
         let mut map = HashMap::new();
         for c in magazine.bytes() {

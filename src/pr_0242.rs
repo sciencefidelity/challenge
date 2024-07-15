@@ -3,6 +3,7 @@ pub struct Solution;
 use std::collections::HashMap;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn is_anagram(s: String, t: String) -> bool {
         if s.len() != t.len() {
             return false;
@@ -26,7 +27,7 @@ impl Solution {
                 None => return false,
             }
         }
-        map.len() == 0
+        map.is_empty()
     }
 }
 

@@ -1,14 +1,14 @@
+use std::iter::zip;
+
 pub struct Solution;
 
 impl Solution {
     pub fn can_complete_circuit(gas: Vec<i32>, cost: Vec<i32>) -> i32 {
-        let mut total_surplus = 0;
-        let mut surplus = 0;
-        let mut start = 0;
+        let (mut start, mut surplus, mut total_surplus) = (0, 0, 0);
 
-        for i in 0..gas.len() {
-            total_surplus += gas[i] - cost[i];
-            surplus += gas[i] - cost[i];
+        for (i, (v_gas, v_cost)) in zip(gas, cost).enumerate() {
+            total_surplus += v_gas - v_cost;
+            surplus += v_gas - v_cost;
             if surplus < 0 {
                 surplus = 0;
                 start = i + 1;
@@ -17,7 +17,7 @@ impl Solution {
         if total_surplus < 0 {
             -1
         } else {
-            start as i32
+            i32::try_from(start).unwrap()
         }
     }
 }

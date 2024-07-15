@@ -2,15 +2,16 @@ pub struct Solution;
 
 impl Solution {
     pub fn pivot_index(nums: Vec<i32>) -> i32 {
+        let n = nums.len();
         let mut sum_left = vec![0];
         let mut sum_right = vec![0];
-        for i in 0..nums.len() {
-            sum_left.push(sum_left[i] + nums[i]);
-            sum_right.push(sum_right[i] + nums[nums.len() - i - 1]);
+        for (i, num) in nums.iter().enumerate() {
+            sum_left.push(sum_left[i] + num);
+            sum_right.push(sum_right[i] + nums[n - i - 1]);
         }
-        for i in 0..nums.len() {
-            if sum_left[i] == sum_right[nums.len() - i - 1] {
-                return i as i32;
+        for (i, _) in nums.into_iter().enumerate() {
+            if sum_left[i] == sum_right[n - i - 1] {
+                return i32::try_from(i).unwrap();
             }
         }
         -1

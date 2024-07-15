@@ -51,7 +51,7 @@ impl Solution {
         spiral_order
     }
 
-    fn is_border(
+    const fn is_border(
         columns: isize,
         rows: isize,
         round: isize,

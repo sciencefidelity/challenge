@@ -1,12 +1,12 @@
 pub struct Solution;
 
 impl Solution {
-    fn get_num_of_bouquets(bloom_day: &Vec<i32>, mid: i32, k: i32) -> i32 {
+    fn get_num_of_bouquets(bloom_day: &[i32], mid: i32, k: i32) -> i32 {
         let mut num_of_bouquets = 0;
         let mut count = 0;
 
-        for i in 0..bloom_day.len() {
-            if bloom_day[i] <= mid {
+        for day in bloom_day {
+            if *day <= mid {
                 count += 1;
             } else {
                 count = 0;
@@ -20,6 +20,7 @@ impl Solution {
         num_of_bouquets
     }
 
+    #[allow(clippy::needless_pass_by_value)]
     pub fn min_days(bloom_day: Vec<i32>, m: i32, k: i32) -> i32 {
         let mut start = 0;
         let mut end = 0;

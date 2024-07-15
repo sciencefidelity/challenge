@@ -12,8 +12,8 @@ impl Solution {
         if let Some(root) = &root {
             if let Ok(mut root) = root.try_borrow_mut() {
                 let right = root.right.clone();
-                root.right = Solution::invert_tree(root.left.clone());
-                root.left = Solution::invert_tree(right);
+                root.right = Self::invert_tree(root.left.clone());
+                root.left = Self::invert_tree(right);
             }
         }
         root

@@ -1,7 +1,7 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(clippy::needless_pass_by_value)]
+    #[allow(clippy::ptr_arg)]
     pub fn remove_element(nums: &mut Vec<i32>, val: i32) -> i32 {
         let mut k = 0;
         for i in 0..nums.len() {

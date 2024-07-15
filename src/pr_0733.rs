@@ -14,16 +14,16 @@ impl Solution {
         if img[sr][sc] == old_color {
             img[sr][sc] = new_color;
             if sr > 0 {
-                Self::dfs(img, sr - 1, sc, old_color, new_color)
+                Self::dfs(img, sr - 1, sc, old_color, new_color);
             }
             if sr + 1 < img.len() {
-                Self::dfs(img, sr + 1, sc, old_color, new_color)
+                Self::dfs(img, sr + 1, sc, old_color, new_color);
             }
             if sc > 0 {
-                Self::dfs(img, sr, sc - 1, old_color, new_color)
+                Self::dfs(img, sr, sc - 1, old_color, new_color);
             }
             if sc + 1 < img[0].len() {
-                Self::dfs(img, sr, sc + 1, old_color, new_color)
+                Self::dfs(img, sr, sc + 1, old_color, new_color);
             }
         }
     }

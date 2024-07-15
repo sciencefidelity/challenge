@@ -3,7 +3,7 @@ pub struct Solution {
 }
 
 impl Solution {
-    pub fn first_bad_version(&self, n: i32) -> i32 {
+    pub const fn first_bad_version(&self, n: i32) -> i32 {
         let mut start = 0;
         let mut end = n;
         while end - start > 1 {
@@ -17,11 +17,11 @@ impl Solution {
         end
     }
 
-    pub fn new(bad_version: i32) -> Self {
+    pub const fn new(bad_version: i32) -> Self {
         Self { bad_version }
     }
 
-    fn is_bad_version(&self, version: i32) -> bool {
+    const fn is_bad_version(&self, version: i32) -> bool {
         version >= self.bad_version
     }
 }

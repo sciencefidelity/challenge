@@ -20,17 +20,16 @@ pub struct Solution;
 // }
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn reverse_vowels(s: String) -> String {
         let mut reversed_vowels = String::new();
         let mut stack: Vec<char> = Vec::new();
-        let mut iter = s.chars();
-        while let Some(c) = iter.next() {
+        for c in s.chars() {
             if is_vowel(c) {
                 stack.push(c);
             }
         }
-        let mut iter = s.chars();
-        while let Some(c) = iter.next() {
+        for c in s.chars() {
             if is_vowel(c) {
                 reversed_vowels.push(stack.pop().unwrap());
             } else {
@@ -41,7 +40,7 @@ impl Solution {
     }
 }
 
-fn is_vowel(c: char) -> bool {
+const fn is_vowel(c: char) -> bool {
     matches!(c, 'a' | 'e' | 'i' | 'o' | 'u' | 'A' | 'E' | 'I' | 'O' | 'U')
 }
 

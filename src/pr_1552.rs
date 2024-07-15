@@ -21,7 +21,7 @@ impl Solution {
         answer
     }
 
-    fn can_place_balls(x: i32, position: &Vec<i32>, m: i32) -> bool {
+    const fn can_place_balls(x: i32, position: &[i32], m: i32) -> bool {
         let mut prev_ball_pos = position[0];
         let mut balls_placed = 1;
         let mut i = 1;

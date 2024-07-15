@@ -3,12 +3,11 @@ pub struct Solution;
 impl Solution {
     pub fn plus_one(mut digits: Vec<i32>) -> Vec<i32> {
         for digit in digits.iter_mut().rev() {
-            match *digit == 9 {
-                true => *digit = 0,
-                false => {
-                    *digit += 1;
-                    return digits;
-                }
+            if *digit == 9 {
+                *digit = 0;
+            } else {
+                *digit += 1;
+                return digits;
             }
         }
         digits.insert(0, 1);

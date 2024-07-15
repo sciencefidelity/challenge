@@ -2,17 +2,20 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_product(nums: Vec<i32>) -> i32 {
-        let (mut max, mut cur_max, mut cur_min) =
-            (nums[0] as i128, nums[0] as i128, nums[0] as i128);
-        for &num in nums.iter().skip(1) {
-            let num = num as i128;
+        let (mut max, mut cur_max, mut cur_min) = (
+            i128::from(nums[0]),
+            i128::from(nums[0]),
+            i128::from(nums[0]),
+        );
+        for num in nums.into_iter().skip(1) {
+            let num = i128::from(num);
             let temp1 = num * cur_max;
             let temp2 = num * cur_min;
             cur_max = temp1.max(temp2).max(num);
             cur_min = temp1.min(temp2).min(num);
             max = max.max(cur_max);
         }
-        max as i32
+        i32::try_from(max).unwrap()
     }
 }
 

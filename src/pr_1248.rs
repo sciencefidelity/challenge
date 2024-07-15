@@ -68,11 +68,12 @@ pub struct Solution;
 // }
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn number_of_subarrays(nums: Vec<i32>, k: i32) -> i32 {
         Self::at_most(&nums, k) - Self::at_most(&nums, k - 1)
     }
 
-    fn at_most(nums: &Vec<i32>, k: i32) -> i32 {
+    fn at_most(nums: &[i32], k: i32) -> i32 {
         let mut window_size = 0;
         let mut subarrays = 0;
         let mut start = 0;
@@ -82,7 +83,7 @@ impl Solution {
                 window_size -= nums[start] % 2;
                 start += 1;
             }
-            subarrays += (end - start + 1) as i32;
+            subarrays += i32::try_from(end - start + 1).unwrap();
         }
         subarrays
     }

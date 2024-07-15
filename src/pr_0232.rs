@@ -6,7 +6,7 @@ struct MyQueue {
 
 impl MyQueue {
     fn new() -> Self {
-        Default::default()
+        Self::default()
     }
 
     fn transfer(&mut self) {

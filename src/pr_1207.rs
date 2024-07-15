@@ -6,8 +6,11 @@ impl Solution {
     pub fn unique_occurrences(arr: Vec<i32>) -> bool {
         let mut occurrences: HashMap<i32, u16> = HashMap::new();
         let mut unique: BTreeSet<u16> = BTreeSet::new();
-        for i in 0..arr.len() {
-            *occurrences.entry(arr[i]).or_insert(0) += 1;
+        for num in arr {
+            occurrences
+                .entry(num)
+                .and_modify(|count| *count += 1)
+                .or_insert(1);
         }
         for num_occurrences in occurrences.values() {
             if !unique.insert(*num_occurrences) {

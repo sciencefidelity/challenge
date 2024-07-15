@@ -17,13 +17,10 @@ impl Solution {
                 {
                     if first_critical_index.is_none() {
                         first_critical_index = Some(current_index);
-                        last_critical_index = Some(current_index);
-                    } else {
-                        if let Some(last) = last_critical_index {
-                            min_distance = min_distance.min(current_index - last);
-                        }
-                        last_critical_index = Some(current_index);
+                    } else if let Some(last) = last_critical_index {
+                        min_distance = min_distance.min(current_index - last);
                     }
+                    last_critical_index = Some(current_index);
                 }
             }
             previous = Some(next.val);

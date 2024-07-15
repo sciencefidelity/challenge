@@ -33,9 +33,9 @@ impl Solution {
     pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
         let mut set = HashSet::new();
 
-        for (r_idx, r_val) in board.iter().enumerate() {
-            for (c_idx, c_val) in r_val.iter().enumerate() {
-                if *c_val == '.' {
+        for (r_idx, r_val) in board.into_iter().enumerate() {
+            for (c_idx, c_val) in r_val.into_iter().enumerate() {
+                if c_val == '.' {
                     continue;
                 }
                 let b_idx = 3 * (r_idx / 3) + c_idx / 3;

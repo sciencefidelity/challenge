@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn max_profit(prices: Vec<i32>) -> i32 {
         if prices.len() <= 1 {
             return 0;

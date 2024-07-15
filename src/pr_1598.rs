@@ -16,7 +16,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn min_operations(logs: Vec<String>) -> i32 {
-        logs.iter()
+        logs.into_iter()
             .fold(0, |depth, operation| match operation.as_str() {
                 "../" if depth > 0 => depth - 1,
                 "./" | "../" => depth,

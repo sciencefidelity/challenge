@@ -8,17 +8,17 @@ impl Solution {
         Self::climber(n, &mut memo)
     }
 
+    #[allow(clippy::option_if_let_else)]
     fn climber(n: i32, memo: &mut HashMap<i32, i32>) -> i32 {
         if n - 1 <= 1 {
             return n;
         }
-        match memo.get(&n) {
-            Some(value) => *value,
-            None => {
-                let value = Self::climber(n - 1, memo) + Self::climber(n - 2, memo);
-                memo.insert(n, value);
-                value
-            }
+        if let Some(value) = memo.get(&n) {
+            *value
+        } else {
+            let value = Self::climber(n - 1, memo) + Self::climber(n - 2, memo);
+            memo.insert(n, value);
+            value
         }
     }
 }

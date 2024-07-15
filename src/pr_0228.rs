@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn summary_ranges(nums: Vec<i32>) -> Vec<String> {
         let mut ranges = Vec::new();
         let mut i = 0;
@@ -10,10 +11,10 @@ impl Solution {
                 i += 1;
             }
             let end = nums[i];
-            if start != end {
-                ranges.push(format!("{start}->{end}"));
-            } else {
+            if start == end {
                 ranges.push(start.to_string());
+            } else {
+                ranges.push(format!("{start}->{end}"));
             }
             i += 1;
         }

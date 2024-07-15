@@ -1,3 +1,5 @@
+use std::cmp::Ordering;
+
 pub struct Solution;
 
 impl Solution {
@@ -7,12 +9,10 @@ impl Solution {
         let mut r = nums.len();
         while l != r {
             let m = (l + r) / 2;
-            if nums[m] == target {
-                return i32::try_from(m).unwrap();
-            } else if nums[m] < target {
-                l = m + 1;
-            } else {
-                r = m;
+            match nums[m].cmp(&target) {
+                Ordering::Less => l = m + 1,
+                Ordering::Equal => return i32::try_from(m).unwrap(),
+                Ordering::Greater => r = m,
             }
         }
         i32::try_from(l).unwrap()

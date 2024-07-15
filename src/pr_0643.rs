@@ -1,16 +1,16 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn find_max_average(nums: Vec<i32>, k: i32) -> f64 {
-        let k = k as usize;
-        let mut sum = nums[..k].iter().sum::<i32>();
+        let mut sum = nums[..usize::try_from(k).unwrap()].iter().sum::<i32>();
         let mut max = sum;
 
-        for i in 0..nums.len() - k {
-            sum = sum - nums[i] + nums[i + k];
+        for i in 0..nums.len() - usize::try_from(k).unwrap() {
+            sum = sum - nums[i] + nums[i + usize::try_from(k).unwrap()];
             max = max.max(sum);
         }
-        max as f64 / k as f64
+        f64::from(max) / f64::from(k)
     }
 }
 

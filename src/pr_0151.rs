@@ -7,13 +7,14 @@ pub struct Solution;
 // }
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn reverse_words(s: String) -> String {
         let mut reversed_words = String::with_capacity(s.len());
         let mut iter = s.split_whitespace().peekable();
         while let Some(word) = iter.next_back() {
             reversed_words.push_str(word);
-            if let Some(_) = iter.peek() {
-                reversed_words.push_str(" ");
+            if iter.peek().is_some() {
+                reversed_words.push(' ');
             }
         }
         reversed_words

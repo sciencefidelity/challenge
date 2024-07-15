@@ -45,6 +45,7 @@ pub struct Solution;
 use std::cmp::min;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn maximum_gain(s: String, mut x: i32, mut y: i32) -> i32 {
         let mut direction = 1;
         if x < y {

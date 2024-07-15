@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn longest_ones(nums: Vec<i32>, mut k: i32) -> i32 {
         let mut low = 0;
         let mut high = 0;
@@ -16,7 +17,7 @@ impl Solution {
             }
             high += 1;
         }
-        (high - low) as i32
+        i32::try_from(high - low).unwrap()
     }
 }
 

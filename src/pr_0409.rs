@@ -3,6 +3,7 @@ pub struct Solution;
 use std::collections::HashSet;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn longest_palindrome(s: String) -> i32 {
         let mut longest_palindrome_length = 0;
         let mut set = HashSet::new();

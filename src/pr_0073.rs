@@ -1,22 +1,23 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::ptr_arg)]
     pub fn set_zeroes(matrix: &mut Vec<Vec<i32>>) {
         let mut rows = vec![false; matrix.len()];
         let mut cols = vec![false; matrix[0].len()];
 
-        for row in 0..matrix.len() {
-            for col in 0..matrix[0].len() {
-                if matrix[row][col] == 0 {
-                    rows[row] = true;
-                    cols[col] = true;
+        for (i_row, v_row) in matrix.iter().enumerate() {
+            for (i_col, v_col) in v_row.iter().enumerate() {
+                if *v_col == 0 {
+                    rows[i_row] = true;
+                    cols[i_col] = true;
                 }
             }
         }
-        for row in 0..matrix.len() {
-            for col in 0..matrix[0].len() {
-                if rows[row] || cols[col] {
-                    matrix[row][col] = 0;
+        for (i_row, v_row) in matrix.iter_mut().enumerate() {
+            for (i_col, v_col) in v_row.iter_mut().enumerate() {
+                if rows[i_row] || cols[i_col] {
+                    *v_col = 0;
                 }
             }
         }

@@ -2,7 +2,7 @@ pub struct Solution;
 
 // Fermat Theorem
 impl Solution {
-    pub fn judge_square_sum(mut c: i32) -> bool {
+    pub const fn judge_square_sum(mut c: i32) -> bool {
         let mut i = 2;
         while i * i <= c {
             let mut count = 0;

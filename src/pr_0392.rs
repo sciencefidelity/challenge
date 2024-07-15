@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn is_subsequence(s: String, t: String) -> bool {
         if s == t {
             return true;

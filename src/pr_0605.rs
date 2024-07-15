@@ -3,8 +3,8 @@ pub struct Solution;
 impl Solution {
     pub fn can_place_flowers(flowerbed: Vec<i32>, mut n: i32) -> bool {
         let mut spaces = 1;
-        for i in 0..flowerbed.len() {
-            if flowerbed[i] == 0 {
+        for flower in flowerbed {
+            if flower == 0 {
                 spaces += 1;
                 if spaces == 3 {
                     n -= 1;

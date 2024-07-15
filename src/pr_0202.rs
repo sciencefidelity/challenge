@@ -1,7 +1,7 @@
 pub struct Solution;
 
 impl Solution {
-    pub fn is_happy(n: i32) -> bool {
+    pub const fn is_happy(n: i32) -> bool {
         let mut slow = n;
         let mut fast = n;
         loop {
@@ -16,7 +16,7 @@ impl Solution {
         }
     }
 
-    fn square(mut num: i32) -> i32 {
+    const fn square(mut num: i32) -> i32 {
         let mut square = 0;
         while num > 0 {
             let remainder = num % 10;

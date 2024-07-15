@@ -1,8 +1,9 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn max_satisfied(customers: Vec<i32>, grumpy: Vec<i32>, minutes: i32) -> i32 {
-        let minutes = minutes.try_into().expect("unable to convert i32 to usize");
+        let minutes = minutes.try_into().unwrap();
         let mut unrealized_customers = 0;
 
         for i in 0..minutes {

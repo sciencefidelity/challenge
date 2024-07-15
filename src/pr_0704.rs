@@ -3,6 +3,7 @@ pub struct Solution;
 use std::cmp::Ordering;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn search(nums: Vec<i32>, target: i32) -> i32 {
         let mut low = 0_usize;
         let mut high = nums.len();

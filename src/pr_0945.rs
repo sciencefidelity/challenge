@@ -4,10 +4,10 @@ impl Solution {
     pub fn min_increment_for_unique(nums: Vec<i32>) -> i32 {
         let mut min_increments = 0;
         let max = nums.iter().max().unwrap();
-        let mut frequency_count = vec![0; nums.len() + *max as usize];
+        let mut frequency_count = vec![0; nums.len() + usize::try_from(*max).unwrap()];
 
         for val in nums {
-            frequency_count[val as usize] += 1;
+            frequency_count[usize::try_from(val).unwrap()] += 1;
         }
 
         for i in 0..frequency_count.len() {

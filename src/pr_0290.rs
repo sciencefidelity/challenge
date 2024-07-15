@@ -3,6 +3,7 @@ pub struct Solution;
 use std::collections::{HashMap, HashSet};
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn word_pattern(pattern: String, s: String) -> bool {
         if pattern.len() != s.matches(' ').count() + 1 {
             return false;

@@ -3,21 +3,22 @@ pub struct Solution;
 use std::collections::VecDeque;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn longest_subarray(nums: Vec<i32>, limit: i32) -> i32 {
         let mut max_deque = VecDeque::new();
         let mut min_deque = VecDeque::new();
         let mut left = 0;
         let mut max_length = 0;
-        for right in 0..nums.len() {
-            while !max_deque.is_empty() && *max_deque.back().unwrap() < nums[right] {
+        for (right, num) in nums.iter().enumerate() {
+            while !max_deque.is_empty() && max_deque.back().unwrap() < num {
                 max_deque.pop_back();
             }
-            max_deque.push_back(nums[right]);
+            max_deque.push_back(*num);
 
-            while !min_deque.is_empty() && *min_deque.back().unwrap() > nums[right] {
+            while !min_deque.is_empty() && min_deque.back().unwrap() > num {
                 min_deque.pop_back();
             }
-            min_deque.push_back(nums[right]);
+            min_deque.push_back(*num);
 
             while max_deque.front().unwrap() - min_deque.front().unwrap() > limit {
                 if *max_deque.front().unwrap() == nums[left] {
@@ -30,7 +31,7 @@ impl Solution {
             }
             max_length = max_length.max(right - left + 1);
         }
-        max_length as i32
+        i32::try_from(max_length).unwrap()
     }
 }
 

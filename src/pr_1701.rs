@@ -2,14 +2,15 @@ pub struct Solution;
 
 impl Solution {
     pub fn average_waiting_time(customers: Vec<Vec<i32>>) -> f64 {
-        let mut next_idle_time: u64 = 0;
+        let n = i32::try_from(customers.len()).unwrap();
+        let mut next_idle_time = 0;
         let mut net_wait_time = 0;
-        for customer in &customers {
-            let (arrival, time) = (customer[0] as u64, customer[1] as u64);
+        for customer in customers {
+            let (arrival, time) = (i64::from(customer[0]), i64::from(customer[1]));
             next_idle_time = arrival.max(next_idle_time) + time;
-            net_wait_time += next_idle_time - arrival;
+            net_wait_time += i32::try_from(next_idle_time - arrival).unwrap();
         }
-        net_wait_time as f64 / customers.len() as f64
+        f64::from(net_wait_time) / f64::from(n)
     }
 }
 

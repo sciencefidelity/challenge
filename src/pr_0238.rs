@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn product_except_self(nums: Vec<i32>) -> Vec<i32> {
         let mut products = vec![1_i32; nums.len()];
         let mut prefix = 1;
