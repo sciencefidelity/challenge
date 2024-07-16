@@ -33,25 +33,25 @@ mod tests {
 
     #[test]
     fn case_1() {
-        let l1 = ListNode::from(vec![1, 2, 4]);
-        let l2 = ListNode::from(vec![1, 3, 4]);
-        let list = ListNode::from(vec![1, 1, 2, 3, 4, 4]);
+        let l1 = ListNode::from(&[1, 2, 4]);
+        let l2 = ListNode::from(&[1, 3, 4]);
+        let list = ListNode::from(&[1, 1, 2, 3, 4, 4]);
         assert_eq!(list, Solution::merge_two_lists(l1, l2));
     }
 
     #[test]
     fn case_2() {
-        let l1 = ListNode::from(vec![]);
-        let l2 = ListNode::from(vec![]);
-        let list = ListNode::from(vec![]);
+        let l1 = ListNode::from(&[]);
+        let l2 = ListNode::from(&[]);
+        let list = ListNode::from(&[]);
         assert_eq!(list, Solution::merge_two_lists(l1, l2));
     }
 
     #[test]
     fn case_3() {
-        let l1 = ListNode::from(vec![]);
-        let l2 = ListNode::from(vec![0]);
-        let list = ListNode::from(vec![0]);
+        let l1 = ListNode::from(&[]);
+        let l2 = ListNode::from(&[0]);
+        let list = ListNode::from(&[0]);
         assert_eq!(list, Solution::merge_two_lists(l1, l2));
     }
 }

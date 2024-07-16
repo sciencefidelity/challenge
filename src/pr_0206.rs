@@ -22,22 +22,22 @@ mod tests {
 
     #[test]
     fn case_1() {
-        let l1 = ListNode::from(vec![1, 2, 3, 4, 5]);
-        let l2 = ListNode::from(vec![5, 4, 3, 2, 1]);
+        let l1 = ListNode::from(&[1, 2, 3, 4, 5]);
+        let l2 = ListNode::from(&[5, 4, 3, 2, 1]);
         assert_eq!(Solution::reverse_list(l1), l2);
     }
 
     #[test]
     fn case_2() {
-        let l1 = ListNode::from(vec![1, 2]);
-        let l2 = ListNode::from(vec![2, 1]);
+        let l1 = ListNode::from(&[1, 2]);
+        let l2 = ListNode::from(&[2, 1]);
         assert_eq!(Solution::reverse_list(l1), l2);
     }
 
     #[test]
     fn case_3() {
-        let l1 = ListNode::from(vec![]);
-        let l2 = ListNode::from(vec![]);
+        let l1 = ListNode::from(&[]);
+        let l2 = ListNode::from(&[]);
         assert_eq!(Solution::reverse_list(l1), l2);
     }
 }

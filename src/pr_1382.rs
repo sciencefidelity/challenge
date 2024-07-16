@@ -39,4 +39,31 @@ impl Solution {
     }
 }
 
-// TODO: write tests.
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn case_1() {
+        let tree = TreeNode::from(vec![
+            Some(1),
+            None,
+            Some(2),
+            None,
+            Some(3),
+            None,
+            Some(4),
+            None,
+            None,
+        ]);
+        let solution = TreeNode::from(vec![Some(3), Some(2), Some(4), Some(1)]);
+        assert_eq!(Solution::balance_bst(tree), solution);
+    }
+
+    #[test]
+    fn case_2() {
+        let tree = TreeNode::from(vec![Some(2), Some(1), Some(3)]);
+        let solution = TreeNode::from(vec![Some(2), Some(1), Some(3)]);
+        assert_eq!(Solution::balance_bst(tree), solution);
+    }
+}

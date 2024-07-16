@@ -33,16 +33,16 @@ mod tests {
 
     #[test]
     fn case_1() {
-        let l1 = ListNode::from(vec![0, 3, 1, 0, 4, 5, 2, 0]);
-        let l2 = ListNode::from(vec![4, 11]);
+        let l1 = ListNode::from(&[0, 3, 1, 0, 4, 5, 2, 0]);
+        let l2 = ListNode::from(&[4, 11]);
         let l1 = Solution::merge_nodes(l1);
         assert_eq!(l1, l2);
     }
 
     #[test]
     fn case_2() {
-        let l1 = ListNode::from(vec![0, 1, 0, 3, 0, 2, 2, 0]);
-        let l2 = ListNode::from(vec![1, 3, 4]);
+        let l1 = ListNode::from(&[0, 1, 0, 3, 0, 2, 2, 0]);
+        let l2 = ListNode::from(&[1, 3, 4]);
         let l1 = Solution::merge_nodes(l1);
         assert_eq!(l1, l2);
     }

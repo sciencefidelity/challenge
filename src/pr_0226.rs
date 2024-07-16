@@ -25,17 +25,33 @@ mod tests {
     use super::*;
 
     #[test]
-    #[ignore = "not yet implemented"]
     fn case_1() {
-        todo!();
-        // assert_eq!(Solution::invert_tree(root.clone()), root);
+        let tree = TreeNode::from(vec![
+            Some(4),
+            Some(2),
+            Some(7),
+            Some(1),
+            Some(3),
+            Some(6),
+            Some(9),
+        ]);
+        let solution = TreeNode::from(vec![
+            Some(4),
+            Some(7),
+            Some(2),
+            Some(9),
+            Some(6),
+            Some(3),
+            Some(1),
+        ]);
+        assert_eq!(Solution::invert_tree(tree), solution);
     }
 
     #[test]
-    #[ignore = "not yet implemented"]
     fn case_2() {
-        todo!();
-        // assert_eq!(Solution::invert_tree(tree.clone()), tree);
+        let tree = TreeNode::from(vec![Some(2), Some(1), Some(3)]);
+        let solution = TreeNode::from(vec![Some(2), Some(3), Some(1)]);
+        assert_eq!(Solution::invert_tree(tree), solution);
     }
 
     #[test]

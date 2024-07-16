@@ -46,19 +46,19 @@ mod tests {
 
     #[test]
     fn case_1() {
-        let list = ListNode::from(vec![3, 1]);
+        let list = ListNode::from(&[3, 1]);
         assert_eq!(Solution::nodes_between_critical_points(list), vec![-1, -1]);
     }
 
     #[test]
     fn case_2() {
-        let list = ListNode::from(vec![5, 3, 1, 2, 5, 1, 2]);
+        let list = ListNode::from(&[5, 3, 1, 2, 5, 1, 2]);
         assert_eq!(Solution::nodes_between_critical_points(list), vec![1, 3]);
     }
 
     #[test]
     fn case_3() {
-        let list = ListNode::from(vec![1, 3, 2, 2, 3, 2, 2, 2, 7]);
+        let list = ListNode::from(&[1, 3, 2, 2, 3, 2, 2, 2, 7]);
         assert_eq!(Solution::nodes_between_critical_points(list), vec![3, 3]);
     }
 }

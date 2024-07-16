@@ -25,15 +25,15 @@ mod tests {
 
     #[test]
     fn case_1() {
-        let l1 = ListNode::from(vec![1, 2, 3, 4, 5]);
-        let l2 = ListNode::from(vec![3, 4, 5]);
+        let l1 = ListNode::from(&[1, 2, 3, 4, 5]);
+        let l2 = ListNode::from(&[3, 4, 5]);
         assert_eq!(Solution::middle_node(l1), l2);
     }
 
     #[test]
     fn case_2() {
-        let l1 = ListNode::from(vec![1, 2, 3, 4, 5, 6]);
-        let l2 = ListNode::from(vec![4, 5, 6]);
+        let l1 = ListNode::from(&[1, 2, 3, 4, 5, 6]);
+        let l2 = ListNode::from(&[4, 5, 6]);
         assert_eq!(Solution::middle_node(l1), l2);
     }
 }

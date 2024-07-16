@@ -40,25 +40,25 @@ mod tests {
 
     #[test]
     fn case_1() {
-        let l1 = ListNode::from(vec![2, 4, 3]);
-        let l2 = ListNode::from(vec![5, 6, 4]);
-        let list = ListNode::from(vec![7, 0, 8]);
+        let l1 = ListNode::from(&[2, 4, 3]);
+        let l2 = ListNode::from(&[5, 6, 4]);
+        let list = ListNode::from(&[7, 0, 8]);
         assert_eq!(list, Solution::add_two_numbers(l1, l2));
     }
 
     #[test]
     fn case_2() {
-        let l1 = ListNode::from(vec![0]);
-        let l2 = ListNode::from(vec![0]);
-        let list = ListNode::from(vec![0]);
+        let l1 = ListNode::from(&[0]);
+        let l2 = ListNode::from(&[0]);
+        let list = ListNode::from(&[0]);
         assert_eq!(list, Solution::add_two_numbers(l1, l2));
     }
 
     #[test]
     fn case_3() {
-        let l1 = ListNode::from(vec![9, 9, 9, 9, 9, 9, 9]);
-        let l2 = ListNode::from(vec![9, 9, 9, 9]);
-        let list = ListNode::from(vec![8, 9, 9, 9, 0, 0, 0, 1]);
+        let l1 = ListNode::from(&[9, 9, 9, 9, 9, 9, 9]);
+        let l2 = ListNode::from(&[9, 9, 9, 9]);
+        let list = ListNode::from(&[8, 9, 9, 9, 0, 0, 0, 1]);
         assert_eq!(list, Solution::add_two_numbers(l1, l2));
     }
 }
