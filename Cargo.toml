@@ -8,8 +8,8 @@ readme = "README.md"
 repository = "https://github.com/sciencefidelity/leetcode"
 license = "MIT or Apache-2.0"
 
-[lints.rust]
-unsafe_code = "forbid"
+# [lints.rust]
+# unsafe_code = "forbid"
 
 [lints.clippy]
 enum_glob_use = "deny"
