@@ -6,6 +6,7 @@ pub struct Solution;
 type Tree = Option<Rc<RefCell<TreeNode>>>;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn average_of_levels(root: Tree) -> Vec<f64> {
         let mut average = Vec::new();
         Self::recurse(&root, 0, &mut average, &mut Vec::new());
@@ -20,7 +21,7 @@ impl Solution {
             }
             let node = node.borrow();
             average[depth] =
-                (average[depth] * count[depth] + f64::from(node.val)) / (count[depth] + 1.0);
+                average[depth].mul_add(count[depth], f64::from(node.val)) / (count[depth] + 1.0);
             count[depth] += 1.0;
             Self::recurse(&node.left, depth + 1, average, count);
             Self::recurse(&node.right, depth + 1, average, count);
