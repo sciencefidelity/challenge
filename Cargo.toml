@@ -1,11 +1,11 @@
 [package]
-name = "leetcode"
+name = "challenge"
 version = "0.1.0"
 authors = ["Matt Cook <hello@mattcook.dev>"] 
 edition = "2021"
-description = "Leetcode solutions in Rust"
+description = "Challenge solutions"
 readme = "README.md"
-repository = "https://github.com/sciencefidelity/leetcode"
+repository = "https://github.com/sciencefidelity/challenge"
 license = "MIT or Apache-2.0"
 
 # [lints.rust]
