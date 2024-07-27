@@ -1,5 +1,7 @@
 // use std::collections::BinaryHeap;
 
+use std::cmp::Ordering;
+
 pub trait Select<T> {
     fn quickselect(&mut self, k: usize) -> T;
 }
@@ -26,8 +28,7 @@ impl Solution {
 
     pub fn find_kth_largest(mut nums: Vec<i32>, k: i32) -> i32 {
         let (n, k) = (nums.len(), usize::try_from(k).unwrap());
-        let out = nums.quickselect(n - k);
-        out
+        nums.quickselect(n - k)
     }
 }
 
@@ -47,17 +48,19 @@ impl Quickselect {
         left_index: usize,
         right_index: usize,
     ) -> T {
-        if right_index - left_index <= 0 {
+        if right_index - left_index == 0 {
             return list[left_index];
         }
         let pivot_index = Self::partition(list, left_index, right_index);
 
-        if kth_lowset_value < pivot_index {
-            Self::quickselect(list, kth_lowset_value, left_index, pivot_index - 1)
-        } else if kth_lowset_value > pivot_index {
-            Self::quickselect(list, kth_lowset_value, pivot_index + 1, right_index)
-        } else {
-            list[pivot_index]
+        match kth_lowset_value.cmp(&pivot_index) {
+            Ordering::Less => {
+                Self::quickselect(list, kth_lowset_value, left_index, pivot_index - 1)
+            }
+            Ordering::Greater => {
+                Self::quickselect(list, kth_lowset_value, pivot_index + 1, right_index)
+            }
+            Ordering::Equal => list[pivot_index],
         }
     }
 
@@ -78,10 +81,9 @@ impl Quickselect {
             }
             if left_pointer >= right_pointer {
                 break;
-            } else {
-                list.swap(left_pointer, right_pointer);
-                left_pointer += 1;
             }
+            list.swap(left_pointer, right_pointer);
+            left_pointer += 1;
         }
         list.swap(left_pointer, pivot_index);
         left_pointer
