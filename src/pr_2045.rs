@@ -19,7 +19,7 @@ impl Solution {
         while let Some((node, freq)) = q.pop_front() {
             let mut time_taken = if freq == 1 { dist1[node] } else { dist2[node] };
             if (time_taken / change) % 2 == 0 {
-                time_taken = time_taken + time;
+                time_taken += time;
             } else {
                 time_taken = change * (time_taken / change + 1) + time;
             }
