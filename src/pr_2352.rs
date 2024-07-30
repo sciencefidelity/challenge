@@ -3,6 +3,7 @@ use std::collections::HashMap;
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn equal_pairs(grid: Vec<Vec<i32>>) -> i32 {
         let (rows, cols) = (grid.len(), grid[0].len());
         let (mut pairs, mut map) = (0, HashMap::new());
@@ -11,6 +12,7 @@ impl Solution {
         }
         for j in 0..cols {
             let mut col = Vec::new();
+            #[allow(clippy::needless_range_loop)]
             for i in 0..rows {
                 col.push(grid[i][j]);
             }
