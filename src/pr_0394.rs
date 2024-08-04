@@ -3,7 +3,7 @@ pub struct Solution;
 impl Solution {
     pub fn decode_string(s: String) -> String {
         let mut decoded = String::new();
-        let mut stack: Vec<char> = Vec::new();
+        let mut _stack: Vec<char> = Vec::new();
         let mut iter = s.chars();
         let mut count: usize = 0;
         while let Some(c) = iter.next() {
