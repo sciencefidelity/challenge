@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn num_magic_squares_inside(grid: Vec<Vec<i32>>) -> i32 {
         let (m, n) = (grid.len(), grid[0].len());
         if m < 3 || n < 3 {
@@ -17,7 +18,7 @@ impl Solution {
         count
     }
 
-    fn is_magic_square(grid: &Vec<Vec<i32>>, row: usize, col: usize) -> bool {
+    fn is_magic_square(grid: &[Vec<i32>], row: usize, col: usize) -> bool {
         let sequence = "2943816729438167";
         let sequence_reversed = "7618349276183492";
         let mut border = String::new();
