@@ -50,7 +50,7 @@ mod tests {
     #[test]
     fn case_3() {
         assert_eq!(
-            "".to_owned(),
+            String::new(),
             Solution::kth_distinct(stringify(&["a", "b", "a"]), 3)
         );
     }

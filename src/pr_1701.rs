@@ -19,11 +19,13 @@ mod tests {
     use super::*;
 
     #[test]
+    #[allow(clippy::float_cmp)]
     fn case_0() {
         assert_eq!(Solution::average_waiting_time(vec![vec![1, 2]]), 2.0);
     }
 
     #[test]
+    #[allow(clippy::float_cmp)]
     fn case_1() {
         assert_eq!(
             Solution::average_waiting_time(vec![vec![1, 2], vec![2, 5], vec![4, 3]]),
@@ -32,6 +34,7 @@ mod tests {
     }
 
     #[test]
+    #[allow(clippy::float_cmp)]
     fn case_2() {
         assert_eq!(
             Solution::average_waiting_time(vec![vec![5, 2], vec![5, 4], vec![10, 3], vec![20, 1]]),

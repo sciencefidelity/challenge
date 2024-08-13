@@ -25,21 +25,21 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(Solution::can_jump(vec![2, 3, 1, 1, 4]), true);
+        assert!(Solution::can_jump(vec![2, 3, 1, 1, 4]));
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(Solution::can_jump(vec![3, 2, 1, 0, 4]), false);
+        assert!(!Solution::can_jump(vec![3, 2, 1, 0, 4]));
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(Solution::can_jump(vec![0]), true);
+        assert!(Solution::can_jump(vec![0]));
     }
 
     #[test]
     fn case_4() {
-        assert_eq!(Solution::can_jump(vec![0, 2, 3]), false);
+        assert!(!Solution::can_jump(vec![0, 2, 3]));
     }
 }

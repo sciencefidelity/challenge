@@ -20,6 +20,7 @@ mod tests {
     use super::*;
 
     #[test]
+    #[allow(clippy::float_cmp)]
     fn case_1() {
         assert_eq!(
             Solution::minimum_average(vec![7, 8, 3, 4, 15, 13, 4, 1]),
@@ -28,11 +29,13 @@ mod tests {
     }
 
     #[test]
+    #[allow(clippy::float_cmp)]
     fn case_2() {
         assert_eq!(Solution::minimum_average(vec![1, 9, 8, 3, 10, 5]), 5.5);
     }
 
     #[test]
+    #[allow(clippy::float_cmp)]
     fn case_3() {
         assert_eq!(Solution::minimum_average(vec![1, 2, 3, 7, 8, 9]), 5.0);
     }

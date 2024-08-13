@@ -43,7 +43,7 @@ mod tests {
     fn case_3() {
         assert_eq!(
             Solution::gcd_of_strings("LEET".to_owned(), "CODE".to_owned()),
-            "".to_owned()
+            String::new()
         );
     }
 }

@@ -42,20 +42,20 @@ mod tests {
                 "racecar".to_owned(),
                 "car".to_owned()
             ]),
-            "".to_owned()
+            String::new()
         );
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(Solution::longest_common_prefix(vec![]), "".to_owned());
+        assert_eq!(Solution::longest_common_prefix(vec![]), String::new());
     }
 
     #[test]
     fn case_4() {
         assert_eq!(
-            Solution::longest_common_prefix(vec!["".to_owned()]),
-            "".to_owned()
+            Solution::longest_common_prefix(vec![String::new()]),
+            String::new()
         );
     }
 

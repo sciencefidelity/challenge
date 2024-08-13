@@ -37,7 +37,7 @@ mod tests {
         assert_eq!(
             Solution::lucky_numbers(vec![vec![3, 7, 8], vec![9, 11, 13], vec![15, 16, 17]]),
             vec![15]
-        )
+        );
     }
 
     #[test]
@@ -49,7 +49,7 @@ mod tests {
                 vec![15, 16, 17, 12]
             ]),
             vec![12]
-        )
+        );
     }
 
     #[test]
@@ -57,7 +57,7 @@ mod tests {
         assert_eq!(
             Solution::lucky_numbers(vec![vec![7, 8], vec![1, 2]]),
             vec![7]
-        )
+        );
     }
 
     #[test]
@@ -65,6 +65,6 @@ mod tests {
         assert_eq!(
             Solution::lucky_numbers(vec![vec![3, 6], vec![7, 1], vec![5, 2], vec![4, 8]]),
             vec![]
-        )
+        );
     }
 }

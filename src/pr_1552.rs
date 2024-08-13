@@ -49,8 +49,8 @@ mod tests {
     #[test]
     fn case_2() {
         assert_eq!(
-            Solution::max_distance(vec![5, 4, 3, 2, 1, 1000000000], 2),
-            999999999
+            Solution::max_distance(vec![5, 4, 3, 2, 1, 1_000_000_000], 2),
+            999_999_999
         );
     }
 }

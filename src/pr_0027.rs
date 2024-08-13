@@ -22,7 +22,10 @@ mod tests {
     fn case_1() {
         let mut nums = vec![3, 2, 2, 3];
         let k: usize = 2;
-        assert_eq!(Solution::remove_element(&mut nums, 3), k as i32);
+        assert_eq!(
+            Solution::remove_element(&mut nums, 3),
+            i32::try_from(k).unwrap()
+        );
         assert_eq!(nums[..k], vec![2, 2]);
     }
 
@@ -30,7 +33,10 @@ mod tests {
     fn case_2() {
         let mut nums = vec![0, 1, 2, 2, 3, 0, 4, 2];
         let k: usize = 5;
-        assert_eq!(Solution::remove_element(&mut nums, 2), k as i32);
+        assert_eq!(
+            Solution::remove_element(&mut nums, 2),
+            i32::try_from(k).unwrap()
+        );
         assert_eq!(nums[..k], vec![0, 1, 3, 0, 4]);
     }
 }

@@ -12,16 +12,16 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(true, Solution::is_power_of_four(16));
+        assert!(Solution::is_power_of_four(16));
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(false, Solution::is_power_of_four(5));
+        assert!(!Solution::is_power_of_four(5));
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(true, Solution::is_power_of_four(1));
+        assert!(Solution::is_power_of_four(1));
     }
 }

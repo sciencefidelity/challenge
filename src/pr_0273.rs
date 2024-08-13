@@ -316,14 +316,14 @@ mod tests {
     #[test]
     fn case_17() {
         let expected = "Twelve Thousand Three Hundred Forty Five".to_owned();
-        assert_eq!(expected, Solution::number_to_words(12345));
+        assert_eq!(expected, Solution::number_to_words(12_345));
     }
 
     #[test]
     fn case_18() {
         let expected =
             "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven".to_owned();
-        assert_eq!(expected, Solution::number_to_words(1234567));
+        assert_eq!(expected, Solution::number_to_words(1_234_567));
     }
 
     #[test]
@@ -335,14 +335,12 @@ mod tests {
     #[test]
     fn case_20() {
         let expected = "One Hundred Twenty Three Million One Hundred Twenty Three Thousand One Hundred Twenty Three".to_owned();
-        assert_eq!(expected, Solution::number_to_words(123123123));
+        assert_eq!(expected, Solution::number_to_words(123_123_123));
     }
 
     #[test]
     fn case_21() {
         let expected = "One Billion One Hundred Twenty Three Million One Hundred Twenty Three Thousand One Hundred Twenty Three".to_owned();
-        assert_eq!(expected, Solution::number_to_words(1123123123));
+        assert_eq!(expected, Solution::number_to_words(1_123_123_123));
     }
 }
-
-// [3,2,1,3,2,1,3,2,1,1]

@@ -25,25 +25,16 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(
-            Solution::can_construct("a".to_owned(), "b".to_owned()),
-            false
-        );
+        assert!(!Solution::can_construct("a".to_owned(), "b".to_owned()),);
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(
-            Solution::can_construct("aa".to_owned(), "ab".to_owned()),
-            false
-        );
+        assert!(!Solution::can_construct("aa".to_owned(), "ab".to_owned()),);
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(
-            Solution::can_construct("aa".to_owned(), "aab".to_owned()),
-            true
-        );
+        assert!(Solution::can_construct("aa".to_owned(), "aab".to_owned()),);
     }
 }

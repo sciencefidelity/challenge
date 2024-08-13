@@ -17,11 +17,11 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(Solution::reverse_bits(43261596), 964176192);
+        assert_eq!(Solution::reverse_bits(43_261_596), 964_176_192);
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(Solution::reverse_bits(4294967293), 3221225471);
+        assert_eq!(Solution::reverse_bits(4_294_967_293), 3_221_225_471);
     }
 }

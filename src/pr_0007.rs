@@ -46,36 +46,36 @@ mod tests {
 
     #[test]
     fn case_6() {
-        assert_eq!(1463847412, Solution::reverse(i32::MAX - 6));
+        assert_eq!(1_463_847_412, Solution::reverse(i32::MAX - 6));
     }
 
     #[test]
     fn case_7() {
-        assert_eq!(-1463847412, Solution::reverse(i32::MIN + 7));
+        assert_eq!(-1_463_847_412, Solution::reverse(i32::MIN + 7));
     }
 
     #[test]
     fn case_8() {
-        assert_eq!(2147447412, Solution::reverse(2147447412));
+        assert_eq!(2_147_447_412, Solution::reverse(2_147_447_412));
     }
 
     #[test]
     fn case_9() {
-        assert_eq!(-2147447412, Solution::reverse(-2147447412));
+        assert_eq!(-2_147_447_412, Solution::reverse(-2_147_447_412));
     }
 
     #[test]
     fn case_10() {
-        assert_eq!(0, Solution::reverse(2147447422));
+        assert_eq!(0, Solution::reverse(2_147_447_422));
     }
 
     #[test]
     fn case_11() {
-        assert_eq!(0, Solution::reverse(-2147447422));
+        assert_eq!(0, Solution::reverse(-2_147_447_422));
     }
 
     #[test]
     fn case_12() {
-        assert_eq!(963847412, Solution::reverse(214748369));
+        assert_eq!(963_847_412, Solution::reverse(214_748_369));
     }
 }

@@ -20,19 +20,18 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(Solution::contains_duplicate(vec![1, 2, 3, 1]), true);
+        assert!(Solution::contains_duplicate(vec![1, 2, 3, 1]));
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(Solution::contains_duplicate(vec![1, 2, 3, 4]), false);
+        assert!(!Solution::contains_duplicate(vec![1, 2, 3, 4]));
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(
-            Solution::contains_duplicate(vec![1, 1, 1, 3, 3, 4, 3, 2, 4, 2]),
-            true
-        );
+        assert!(Solution::contains_duplicate(vec![
+            1, 1, 1, 3, 3, 4, 3, 2, 4, 2
+        ]),);
     }
 }

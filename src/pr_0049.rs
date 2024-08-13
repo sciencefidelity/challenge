@@ -54,7 +54,7 @@ mod tests {
             vec!["nat".to_owned(), "tan".to_owned()],
             vec!["ate".to_owned(), "eat".to_owned(), "tea".to_owned()],
         ];
-        solution.sort_by(|a, b| a.len().cmp(&b.len()));
+        solution.sort_by_key(Vec::len);
         solution
             .iter_mut()
             .for_each(|word_list| word_list.sort_unstable());
@@ -63,10 +63,10 @@ mod tests {
 
     #[test]
     fn case_2() {
-        let words = vec!["".to_owned()];
+        let words = vec![String::new()];
         let mut solution = Solution::group_anagrams(words);
-        let expected = vec![vec!["".to_owned()]];
-        solution.sort_by(|a, b| a.len().cmp(&b.len()));
+        let expected = vec![vec![String::new()]];
+        solution.sort_by_key(Vec::len);
         solution
             .iter_mut()
             .for_each(|word_list| word_list.sort_unstable());
@@ -78,7 +78,7 @@ mod tests {
         let words = vec!["a".to_owned()];
         let mut solution = Solution::group_anagrams(words);
         let expected = vec![vec!["a".to_owned()]];
-        solution.sort_by(|a, b| a.len().cmp(&b.len()));
+        solution.sort_by_key(Vec::len);
         solution
             .iter_mut()
             .for_each(|word_list| word_list.sort_unstable());

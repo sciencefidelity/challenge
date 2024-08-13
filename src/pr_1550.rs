@@ -27,22 +27,20 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(Solution::three_consecutive_odds(vec![2, 6, 4, 1]), false);
+        assert!(!Solution::three_consecutive_odds(vec![2, 6, 4, 1]));
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(
-            Solution::three_consecutive_odds(vec![1, 2, 34, 3, 4, 5, 7, 23, 12]),
-            true
-        );
+        assert!(Solution::three_consecutive_odds(vec![
+            1, 2, 34, 3, 4, 5, 7, 23, 12
+        ]),);
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(
-            Solution::three_consecutive_odds(vec![1, 2, 34, 3, 4, 5, 8, 23, 12]),
-            false
-        );
+        assert!(!Solution::three_consecutive_odds(vec![
+            1, 2, 34, 3, 4, 5, 8, 23, 12
+        ]),);
     }
 }

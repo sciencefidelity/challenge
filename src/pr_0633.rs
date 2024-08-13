@@ -56,16 +56,16 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(Solution::judge_square_sum(5), true);
+        assert!(Solution::judge_square_sum(5));
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(Solution::judge_square_sum(3), false);
+        assert!(!Solution::judge_square_sum(3));
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(Solution::judge_square_sum(6), false);
+        assert!(!Solution::judge_square_sum(6));
     }
 }

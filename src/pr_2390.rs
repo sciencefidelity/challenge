@@ -31,7 +31,7 @@ mod tests {
     #[test]
     fn case_2() {
         assert_eq!(
-            "".to_owned(),
+            String::new(),
             Solution::remove_stars("erase*****".to_owned())
         );
     }

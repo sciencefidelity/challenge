@@ -53,12 +53,12 @@ mod tests {
         let mut bst_iterator = BSTIterator::new(tree);
         assert_eq!(3, bst_iterator.next());
         assert_eq!(7, bst_iterator.next());
-        assert_eq!(true, bst_iterator.has_next());
+        assert!(bst_iterator.has_next());
         assert_eq!(9, bst_iterator.next());
-        assert_eq!(true, bst_iterator.has_next());
+        assert!(bst_iterator.has_next());
         assert_eq!(15, bst_iterator.next());
-        assert_eq!(true, bst_iterator.has_next());
+        assert!(bst_iterator.has_next());
         assert_eq!(20, bst_iterator.next());
-        assert_eq!(false, bst_iterator.has_next());
+        assert!(!bst_iterator.has_next());
     }
 }

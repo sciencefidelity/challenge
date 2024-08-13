@@ -24,16 +24,16 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(Solution::is_palindrome(121), true);
+        assert!(Solution::is_palindrome(121));
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(Solution::is_palindrome(-121), false);
+        assert!(!Solution::is_palindrome(-121));
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(Solution::is_palindrome(10), false);
+        assert!(!Solution::is_palindrome(10));
     }
 }

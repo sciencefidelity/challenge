@@ -27,21 +27,21 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(Solution::can_place_flowers(vec![1, 0, 0, 0, 1], 1), true);
+        assert!(Solution::can_place_flowers(vec![1, 0, 0, 0, 1], 1));
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(Solution::can_place_flowers(vec![1, 0, 0, 0, 1], 2), false);
+        assert!(!Solution::can_place_flowers(vec![1, 0, 0, 0, 1], 2));
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(Solution::can_place_flowers(vec![0, 0, 1, 0, 1], 1), true);
+        assert!(Solution::can_place_flowers(vec![0, 0, 1, 0, 1], 1));
     }
 
     #[test]
     fn case_4() {
-        assert_eq!(Solution::can_place_flowers(vec![1], 0), true);
+        assert!(Solution::can_place_flowers(vec![1], 0));
     }
 }

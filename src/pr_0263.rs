@@ -19,16 +19,16 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(true, Solution::is_ugly(6));
+        assert!(Solution::is_ugly(6));
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(true, Solution::is_ugly(1));
+        assert!(Solution::is_ugly(1));
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(false, Solution::is_ugly(14));
+        assert!(!Solution::is_ugly(14));
     }
 }

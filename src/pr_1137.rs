@@ -32,16 +32,16 @@ mod tests {
 
     #[test]
     fn case_2() {
-        assert_eq!(1389537, Solution::tribonacci(25));
+        assert_eq!(1_389_537, Solution::tribonacci(25));
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(615693474, Solution::tribonacci(35));
+        assert_eq!(615_693_474, Solution::tribonacci(35));
     }
 
     #[test]
     fn case_4() {
-        assert_eq!(2082876103, Solution::tribonacci(37));
+        assert_eq!(2_082_876_103, Solution::tribonacci(37));
     }
 }

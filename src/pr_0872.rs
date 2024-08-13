@@ -61,13 +61,13 @@ mod tests {
             Some(9),
             Some(8),
         ]);
-        assert_eq!(true, Solution::leaf_similar(root1, root2));
+        assert!(Solution::leaf_similar(root1, root2));
     }
 
     #[test]
     fn case_2() {
         let root1 = TreeNode::from(vec![Some(1), Some(2), Some(3)]);
         let root2 = TreeNode::from(vec![Some(1), Some(3), Some(2)]);
-        assert_eq!(false, Solution::leaf_similar(root1, root2));
+        assert!(!Solution::leaf_similar(root1, root2));
     }
 }

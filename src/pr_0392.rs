@@ -27,22 +27,22 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(
-            Solution::is_subsequence("abc".to_owned(), "ahbgdc".to_owned()),
-            true
-        );
+        assert!(Solution::is_subsequence(
+            "abc".to_owned(),
+            "ahbgdc".to_owned()
+        ),);
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(
-            Solution::is_subsequence("axc".to_owned(), "ahbgdc".to_owned()),
-            false
-        );
+        assert!(!Solution::is_subsequence(
+            "axc".to_owned(),
+            "ahbgdc".to_owned()
+        ),);
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(Solution::is_subsequence("".to_owned(), "".to_owned()), true);
+        assert!(Solution::is_subsequence(String::new(), String::new()));
     }
 }

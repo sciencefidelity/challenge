@@ -20,9 +20,10 @@ impl Solution {
 mod tests {
     use super::*;
 
-    fn sum_rows_columns(matrix: Vec<Vec<i32>>) -> (Vec<i32>, Vec<i32>) {
+    #[allow(clippy::needless_range_loop)]
+    fn sum_rows_columns(matrix: &[Vec<i32>]) -> (Vec<i32>, Vec<i32>) {
         let (mut row_sums, mut col_sums): (Vec<i32>, Vec<i32>) = (vec![], vec![]);
-        for row in &matrix {
+        for row in matrix {
             row_sums.push(row.iter().sum::<i32>());
         }
         for i in 0..matrix[0].len() {
@@ -39,20 +40,20 @@ mod tests {
     fn case_1() {
         let input = (vec![3, 8], vec![4, 7]);
         let output = Solution::restore_matrix(input.0, input.1);
-        assert_eq!((vec![3, 8], vec![4, 7]), sum_rows_columns(output));
+        assert_eq!((vec![3, 8], vec![4, 7]), sum_rows_columns(&output));
     }
 
     #[test]
     fn case_2() {
         let input = (vec![5, 7, 10], vec![8, 6, 8]);
         let output = Solution::restore_matrix(input.0, input.1);
-        assert_eq!((vec![5, 7, 10], vec![8, 6, 8]), sum_rows_columns(output));
+        assert_eq!((vec![5, 7, 10], vec![8, 6, 8]), sum_rows_columns(&output));
     }
 
     #[test]
     fn case_3() {
         let input = (vec![8, 6, 8], vec![5, 7, 10]);
         let output = Solution::restore_matrix(input.0, input.1);
-        assert_eq!((vec![8, 6, 8], vec![5, 7, 10]), sum_rows_columns(output));
+        assert_eq!((vec![8, 6, 8], vec![5, 7, 10]), sum_rows_columns(&output));
     }
 }

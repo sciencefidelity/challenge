@@ -30,28 +30,27 @@ mod tests {
 
     #[test]
     fn case_4() {
-        assert_eq!(Solution::is_palindrome("      ".to_string()), true);
+        assert!(Solution::is_palindrome("      ".to_string()));
     }
     #[test]
     fn case_5() {
-        assert_eq!(Solution::is_palindrome("abba".to_string()), true);
+        assert!(Solution::is_palindrome("abba".to_string()));
     }
 
     #[test]
     fn case_1() {
-        assert_eq!(
-            Solution::is_palindrome("A man, a plan, a canal: Panama".to_string()),
-            true
-        );
+        assert!(Solution::is_palindrome(
+            "A man, a plan, a canal: Panama".to_string()
+        ),);
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(Solution::is_palindrome("race a car".to_string()), false);
+        assert!(!Solution::is_palindrome("race a car".to_string()));
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(Solution::is_palindrome(" ".to_string()), true);
+        assert!(Solution::is_palindrome(" ".to_string()));
     }
 }

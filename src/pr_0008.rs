@@ -54,7 +54,7 @@ mod tests {
 
     #[test]
     fn case_6() {
-        assert_eq!(-2147483648, Solution::my_atoi("-91283472332".to_owned()));
+        assert_eq!(-2_147_483_648, Solution::my_atoi("-91283472332".to_owned()));
     }
 
     #[test]

@@ -37,7 +37,7 @@ mod tests {
     #[test]
     fn case_1() {
         let root = TreeNode::from(vec![Some(4), Some(2), Some(6), Some(1), Some(3)]);
-        assert_eq!(1, Solution::get_minimum_difference(root))
+        assert_eq!(1, Solution::get_minimum_difference(root));
     }
 
     #[test]
@@ -51,7 +51,7 @@ mod tests {
             Some(12),
             Some(49),
         ]);
-        assert_eq!(1, Solution::get_minimum_difference(root))
+        assert_eq!(1, Solution::get_minimum_difference(root));
     }
 
     #[test]
@@ -65,6 +65,6 @@ mod tests {
             None,
             Some(911),
         ]);
-        assert_eq!(9, Solution::get_minimum_difference(root))
+        assert_eq!(9, Solution::get_minimum_difference(root));
     }
 }

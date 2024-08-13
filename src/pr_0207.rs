@@ -48,22 +48,19 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(true, Solution::can_finish(2, vec![vec![1, 0]]));
+        assert!(Solution::can_finish(2, vec![vec![1, 0]]));
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(false, Solution::can_finish(2, vec![vec![1, 0], vec![0, 1]]));
+        assert!(!Solution::can_finish(2, vec![vec![1, 0], vec![0, 1]]));
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(
-            true,
-            Solution::can_finish(
-                5,
-                vec![vec![0, 1], vec![0, 2], vec![1, 3], vec![1, 4], vec![3, 4]]
-            )
-        );
+        assert!(Solution::can_finish(
+            5,
+            vec![vec![0, 1], vec![0, 2], vec![1, 3], vec![1, 4], vec![3, 4]]
+        ));
     }
 }

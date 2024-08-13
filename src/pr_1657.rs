@@ -28,33 +28,27 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(
-            true,
-            Solution::close_strings("abc".to_owned(), "bca".to_owned())
-        );
+        assert!(Solution::close_strings("abc".to_owned(), "bca".to_owned()));
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(
-            false,
-            Solution::close_strings("a".to_owned(), "aa".to_owned())
-        );
+        assert!(!Solution::close_strings("a".to_owned(), "aa".to_owned()));
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(
-            true,
-            Solution::close_strings("cabbba".to_owned(), "abbccc".to_owned())
-        );
+        assert!(Solution::close_strings(
+            "cabbba".to_owned(),
+            "abbccc".to_owned()
+        ));
     }
 
     #[test]
     fn case_4() {
-        assert_eq!(
-            false,
-            Solution::close_strings("dabbba".to_owned(), "abbccc".to_owned())
-        );
+        assert!(!Solution::close_strings(
+            "dabbba".to_owned(),
+            "abbccc".to_owned()
+        ));
     }
 }

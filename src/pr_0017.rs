@@ -1,7 +1,8 @@
 pub struct Solution;
 
 impl Solution {
-    pub fn letter_combinations(digits: String) -> Vec<String> {
+    #[allow(clippy::needless_pass_by_value)]
+    pub fn letter_combinations(_digits: String) -> Vec<String> {
         vec![]
     }
 }
@@ -11,7 +12,7 @@ mod tests {
     use super::*;
 
     fn stringify(v: &[&str]) -> Vec<String> {
-        v.into_iter().map(|&s| s.to_owned()).collect()
+        v.iter().map(|&s| s.to_owned()).collect()
     }
 
     #[test]

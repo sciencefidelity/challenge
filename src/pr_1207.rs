@@ -27,19 +27,18 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(Solution::unique_occurrences(vec![1, 2, 2, 1, 1, 3]), true);
+        assert!(Solution::unique_occurrences(vec![1, 2, 2, 1, 1, 3]));
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(Solution::unique_occurrences(vec![1, 2]), false);
+        assert!(!Solution::unique_occurrences(vec![1, 2]));
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(
-            Solution::unique_occurrences(vec![-3, 0, 1, -3, 1, 1, 1, -3, 10, 0]),
-            true
-        );
+        assert!(Solution::unique_occurrences(vec![
+            -3, 0, 1, -3, 1, 1, 1, -3, 10, 0
+        ]),);
     }
 }

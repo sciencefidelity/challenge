@@ -68,7 +68,7 @@ mod tests {
             vec!['.', '.', '.', '4', '1', '9', '.', '.', '5'],
             vec!['.', '.', '.', '.', '8', '.', '.', '7', '9'],
         ];
-        assert_eq!(Solution::is_valid_sudoku(board), true);
+        assert!(Solution::is_valid_sudoku(board));
     }
 
     #[test]
@@ -84,6 +84,6 @@ mod tests {
             vec!['.', '.', '.', '4', '1', '9', '.', '.', '5'],
             vec!['.', '.', '.', '.', '8', '.', '.', '7', '9'],
         ];
-        assert_eq!(Solution::is_valid_sudoku(board), false);
+        assert!(!Solution::is_valid_sudoku(board));
     }
 }

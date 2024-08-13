@@ -32,7 +32,7 @@ mod tests {
     use super::*;
 
     fn vectorize(v: &[&[i32; 2]]) -> Vec<Vec<i32>> {
-        v.iter().map(|x| x.to_vec()).to_owned().collect()
+        v.iter().map(|x| x.to_vec()).clone().collect()
     }
 
     #[test]

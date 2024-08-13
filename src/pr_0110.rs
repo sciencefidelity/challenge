@@ -42,7 +42,7 @@ mod tests {
             Some(15),
             Some(7),
         ]);
-        assert_eq!(Solution::is_balanced(tree), true);
+        assert!(Solution::is_balanced(tree));
     }
 
     #[test]
@@ -58,12 +58,12 @@ mod tests {
             Some(4),
             Some(4),
         ]);
-        assert_eq!(Solution::is_balanced(tree), false);
+        assert!(!Solution::is_balanced(tree));
     }
 
     #[test]
     fn case_3() {
         let tree = TreeNode::from(vec![]);
-        assert_eq!(Solution::is_balanced(tree), true);
+        assert!(Solution::is_balanced(tree));
     }
 }

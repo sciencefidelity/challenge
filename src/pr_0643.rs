@@ -19,6 +19,7 @@ mod tests {
     use super::*;
 
     #[test]
+    #[allow(clippy::float_cmp)]
     fn case_1() {
         assert_eq!(
             Solution::find_max_average(vec![1, 12, -5, -6, 50, 3], 4),
@@ -27,11 +28,13 @@ mod tests {
     }
 
     #[test]
+    #[allow(clippy::float_cmp)]
     fn case_2() {
         assert_eq!(Solution::find_max_average(vec![5], 1), 5.0);
     }
 
     #[test]
+    #[allow(clippy::float_cmp)]
     fn case_3() {
         assert_eq!(Solution::find_max_average(vec![0, 4, 0, 3, 2], 1), 4.0);
     }

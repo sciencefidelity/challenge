@@ -59,7 +59,7 @@ mod tests {
         root2.borrow_mut().left = Some(Rc::new(RefCell::new(TreeNode::new(2))));
         root2.borrow_mut().right = Some(Rc::new(RefCell::new(TreeNode::new(3))));
 
-        assert_eq!(Solution::is_same_tree(Some(root1), Some(root2)), true);
+        assert!(Solution::is_same_tree(Some(root1), Some(root2)));
     }
 
     #[test]
@@ -70,7 +70,7 @@ mod tests {
         let root2 = Rc::new(RefCell::new(TreeNode::new(1)));
         root2.borrow_mut().right = Some(Rc::new(RefCell::new(TreeNode::new(2))));
 
-        assert_eq!(Solution::is_same_tree(Some(root1), Some(root2)), false);
+        assert!(!Solution::is_same_tree(Some(root1), Some(root2)));
     }
 
     #[test]
@@ -83,6 +83,6 @@ mod tests {
         root2.borrow_mut().left = Some(Rc::new(RefCell::new(TreeNode::new(1))));
         root2.borrow_mut().right = Some(Rc::new(RefCell::new(TreeNode::new(2))));
 
-        assert_eq!(Solution::is_same_tree(Some(root1), Some(root2)), false);
+        assert!(!Solution::is_same_tree(Some(root1), Some(root2)));
     }
 }

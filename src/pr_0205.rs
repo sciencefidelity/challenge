@@ -28,33 +28,27 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(
-            Solution::is_isomorphic("egg".to_owned(), "add".to_owned()),
-            true
-        );
+        assert!(Solution::is_isomorphic("egg".to_owned(), "add".to_owned()),);
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(
-            Solution::is_isomorphic("foo".to_owned(), "bar".to_owned()),
-            false
-        );
+        assert!(!Solution::is_isomorphic("foo".to_owned(), "bar".to_owned()),);
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(
-            Solution::is_isomorphic("paper".to_owned(), "title".to_owned()),
-            true
-        );
+        assert!(Solution::is_isomorphic(
+            "paper".to_owned(),
+            "title".to_owned()
+        ),);
     }
 
     #[test]
     fn case_4() {
-        assert_eq!(
-            Solution::is_isomorphic("badc".to_owned(), "baba".to_owned()),
-            false
-        );
+        assert!(!Solution::is_isomorphic(
+            "badc".to_owned(),
+            "baba".to_owned()
+        ),);
     }
 }

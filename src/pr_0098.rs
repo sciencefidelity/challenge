@@ -30,7 +30,7 @@ mod tests {
     #[test]
     fn case_1() {
         let root = TreeNode::from(vec![Some(2), Some(1), Some(3)]);
-        assert_eq!(true, Solution::is_valid_bst(root));
+        assert!(Solution::is_valid_bst(root));
     }
 
     #[test]
@@ -44,7 +44,7 @@ mod tests {
             Some(3),
             Some(6),
         ]);
-        assert_eq!(false, Solution::is_valid_bst(root));
+        assert!(!Solution::is_valid_bst(root));
     }
 
     #[test]
@@ -58,18 +58,18 @@ mod tests {
             Some(3),
             Some(7),
         ]);
-        assert_eq!(false, Solution::is_valid_bst(root));
+        assert!(!Solution::is_valid_bst(root));
     }
 
     #[test]
     fn case_4() {
-        let root = TreeNode::from(vec![Some(2147483647)]);
-        assert_eq!(true, Solution::is_valid_bst(root));
+        let root = TreeNode::from(vec![Some(2_147_483_647)]);
+        assert!(Solution::is_valid_bst(root));
     }
 
     #[test]
     fn case_5() {
         let root = TreeNode::from(vec![Some(2), Some(2), Some(2)]);
-        assert_eq!(false, Solution::is_valid_bst(root));
+        assert!(!Solution::is_valid_bst(root));
     }
 }

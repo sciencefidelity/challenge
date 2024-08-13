@@ -33,11 +33,11 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(Solution::is_happy(19), true);
+        assert!(Solution::is_happy(19));
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(Solution::is_happy(2), false);
+        assert!(!Solution::is_happy(2));
     }
 }

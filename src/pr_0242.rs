@@ -37,22 +37,19 @@ mod tests {
 
     #[test]
     fn case_1() {
-        assert_eq!(
-            Solution::is_anagram("anagram".to_owned(), "nagaram".to_owned()),
-            true
-        );
+        assert!(Solution::is_anagram(
+            "anagram".to_owned(),
+            "nagaram".to_owned()
+        ),);
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(
-            Solution::is_anagram("rat".to_owned(), "car".to_owned()),
-            false
-        );
+        assert!(!Solution::is_anagram("rat".to_owned(), "car".to_owned()),);
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(Solution::is_anagram("ab".to_owned(), "a".to_owned()), false);
+        assert!(!Solution::is_anagram("ab".to_owned(), "a".to_owned()));
     }
 }

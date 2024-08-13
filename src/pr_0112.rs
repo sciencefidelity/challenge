@@ -39,18 +39,18 @@ mod tests {
             None,
             Some(1),
         ]);
-        assert_eq!(Solution::has_path_sum(tree, 22), true);
+        assert!(Solution::has_path_sum(tree, 22));
     }
 
     #[test]
     fn case_2() {
         let tree = TreeNode::from(vec![Some(1), Some(2), Some(3)]);
-        assert_eq!(Solution::has_path_sum(tree, 5), false);
+        assert!(!Solution::has_path_sum(tree, 5));
     }
 
     #[test]
     fn case_3() {
         let tree = TreeNode::from(vec![]);
-        assert_eq!(Solution::has_path_sum(tree, 0), false);
+        assert!(!Solution::has_path_sum(tree, 0));
     }
 }
