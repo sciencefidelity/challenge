@@ -39,10 +39,7 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    fn stringify(v: &[&str]) -> Vec<String> {
-        v.iter().map(|&s| s.to_owned()).collect()
-    }
+    use utils::stringify;
 
     #[test]
     fn case_1() {

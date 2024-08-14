@@ -25,7 +25,8 @@
             })
           ];
 
-          shellHook = ''
+          shellHook = /*bash*/ ''
+            git pull
           '';
         };
       }

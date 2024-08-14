@@ -18,10 +18,7 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    fn stringify(strs: &[&str]) -> Vec<String> {
-        strs.iter().map(ToString::to_string).collect()
-    }
+    use utils::stringify;
 
     #[test]
     fn case_1() {
