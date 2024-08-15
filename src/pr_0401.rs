@@ -18,19 +18,18 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use utils::stringify;
+    use utils::arr;
 
     #[test]
     fn case_1() {
-        let output = stringify(&[
-            "0:01", "0:02", "0:04", "0:08", "0:16", "0:32", "1:00", "2:00", "4:00", "8:00",
-        ]);
+        let output =
+            arr!["0:01", "0:02", "0:04", "0:08", "0:16", "0:32", "1:00", "2:00", "4:00", "8:00"];
         assert_eq!(output, Solution::read_binary_watch(1));
     }
 
     #[test]
     fn case_2() {
-        let output = stringify(&[]);
+        let output: Vec<String> = arr![];
         assert_eq!(output, Solution::read_binary_watch(9));
     }
 }

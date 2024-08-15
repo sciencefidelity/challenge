@@ -31,11 +31,12 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use utils::arr;
 
     #[test]
     fn case_1() {
         assert_eq!(
-            Solution::lucky_numbers(vec![vec![3, 7, 8], vec![9, 11, 13], vec![15, 16, 17]]),
+            Solution::lucky_numbers(arr![[3, 7, 8], [9, 11, 13], [15, 16, 17]]),
             vec![15]
         );
     }
@@ -43,27 +44,20 @@ mod tests {
     #[test]
     fn case_2() {
         assert_eq!(
-            Solution::lucky_numbers(vec![
-                vec![1, 10, 4, 2],
-                vec![9, 3, 8, 7],
-                vec![15, 16, 17, 12]
-            ]),
+            Solution::lucky_numbers(arr![[1, 10, 4, 2], [9, 3, 8, 7], [15, 16, 17, 12]]),
             vec![12]
         );
     }
 
     #[test]
     fn case_3() {
-        assert_eq!(
-            Solution::lucky_numbers(vec![vec![7, 8], vec![1, 2]]),
-            vec![7]
-        );
+        assert_eq!(Solution::lucky_numbers(arr![[7, 8], [1, 2]]), vec![7]);
     }
 
     #[test]
     fn case_4() {
         assert_eq!(
-            Solution::lucky_numbers(vec![vec![3, 6], vec![7, 1], vec![5, 2], vec![4, 8]]),
+            Solution::lucky_numbers(arr![[3, 6], [7, 1], [5, 2], [4, 8]]),
             vec![]
         );
     }

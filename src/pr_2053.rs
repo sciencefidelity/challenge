@@ -26,13 +26,13 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use utils::stringify;
+    use utils::arr;
 
     #[test]
     fn case_1() {
         assert_eq!(
             "a".to_owned(),
-            Solution::kth_distinct(stringify(&["d", "b", "c", "b", "c", "a"]), 2)
+            Solution::kth_distinct(arr!["d", "b", "c", "b", "c", "a"], 2)
         );
     }
 
@@ -40,7 +40,7 @@ mod tests {
     fn case_2() {
         assert_eq!(
             "aaa".to_owned(),
-            Solution::kth_distinct(stringify(&["aaa", "aa", "a"]), 1)
+            Solution::kth_distinct(arr!["aaa", "aa", "a"], 1)
         );
     }
 
@@ -48,7 +48,7 @@ mod tests {
     fn case_3() {
         assert_eq!(
             String::new(),
-            Solution::kth_distinct(stringify(&["a", "b", "a"]), 3)
+            Solution::kth_distinct(arr!["a", "b", "a"], 3)
         );
     }
 }

@@ -34,18 +34,18 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use utils::stringify;
+    use utils::arr;
 
     #[test]
     fn case_1() {
         assert_eq!(
-            stringify(&["((()))", "(()())", "(())()", "()(())", "()()()"]),
+            arr!["((()))", "(()())", "(())()", "()(())", "()()()"],
             Solution::generate_parenthesis(3)
         );
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(stringify(&["()"]), Solution::generate_parenthesis(1));
+        assert_eq!(arr!["()"], Solution::generate_parenthesis(1));
     }
 }

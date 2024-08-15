@@ -39,25 +39,28 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use utils::stringify;
+    use utils::arr;
 
     #[test]
     fn case_1() {
         assert_eq!(
-            stringify(&["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]),
+            arr!["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"],
             Solution::letter_combinations("23".to_owned())
         );
     }
 
     #[test]
     fn case_2() {
-        assert_eq!(stringify(&[]), Solution::letter_combinations(String::new()));
+        assert_eq!(
+            Vec::<String>::new(),
+            Solution::letter_combinations(String::new())
+        );
     }
 
     #[test]
     fn case_3() {
         assert_eq!(
-            stringify(&["a", "b", "c"]),
+            arr!["a", "b", "c"],
             Solution::letter_combinations("2".to_owned())
         );
     }
@@ -65,11 +68,11 @@ mod tests {
     #[test]
     fn case_4() {
         assert_eq!(
-            stringify(&[
+            arr![
                 "adp", "adq", "adr", "ads", "aep", "aeq", "aer", "aes", "afp", "afq", "afr", "afs",
                 "bdp", "bdq", "bdr", "bds", "bep", "beq", "ber", "bes", "bfp", "bfq", "bfr", "bfs",
                 "cdp", "cdq", "cdr", "cds", "cep", "ceq", "cer", "ces", "cfp", "cfq", "cfr", "cfs"
-            ]),
+            ],
             Solution::letter_combinations("237".to_owned())
         );
     }

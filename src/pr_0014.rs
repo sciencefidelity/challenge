@@ -21,15 +21,12 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use utils::arr;
 
     #[test]
     fn case_1() {
         assert_eq!(
-            Solution::longest_common_prefix(vec![
-                "flower".to_owned(),
-                "flow".to_owned(),
-                "flight".to_owned()
-            ]),
+            Solution::longest_common_prefix(arr!["flower", "flow", "flight"]),
             "fl".to_owned()
         );
     }
@@ -37,11 +34,7 @@ mod tests {
     #[test]
     fn case_2() {
         assert_eq!(
-            Solution::longest_common_prefix(vec![
-                "dog".to_owned(),
-                "racecar".to_owned(),
-                "car".to_owned()
-            ]),
+            Solution::longest_common_prefix(arr!["dog", "racecar", "car"]),
             String::new()
         );
     }
@@ -53,17 +46,11 @@ mod tests {
 
     #[test]
     fn case_4() {
-        assert_eq!(
-            Solution::longest_common_prefix(vec![String::new()]),
-            String::new()
-        );
+        assert_eq!(Solution::longest_common_prefix(arr![""]), String::new());
     }
 
     #[test]
     fn case_5() {
-        assert_eq!(
-            Solution::longest_common_prefix(vec!["a".to_owned()]),
-            "a".to_owned()
-        );
+        assert_eq!(Solution::longest_common_prefix(arr!["a"]), "a".to_owned());
     }
 }

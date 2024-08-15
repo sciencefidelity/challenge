@@ -37,23 +37,13 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use utils::arr;
 
     #[test]
     fn case_1() {
-        let words = vec![
-            "eat".to_owned(),
-            "tea".to_owned(),
-            "tan".to_owned(),
-            "ate".to_owned(),
-            "nat".to_owned(),
-            "bat".to_owned(),
-        ];
+        let words = arr!["eat", "tea", "tan", "ate", "nat", "bat"];
         let mut solution = Solution::group_anagrams(words);
-        let expected = vec![
-            vec!["bat".to_owned()],
-            vec!["nat".to_owned(), "tan".to_owned()],
-            vec!["ate".to_owned(), "eat".to_owned(), "tea".to_owned()],
-        ];
+        let expected = arr![["bat"], ["nat", "tan"], ["ate", "eat", "tea"]];
         solution.sort_by_key(Vec::len);
         solution
             .iter_mut()
@@ -63,9 +53,9 @@ mod tests {
 
     #[test]
     fn case_2() {
-        let words = vec![String::new()];
+        let words = arr![""];
         let mut solution = Solution::group_anagrams(words);
-        let expected = vec![vec![String::new()]];
+        let expected = arr![[""]];
         solution.sort_by_key(Vec::len);
         solution
             .iter_mut()
@@ -75,9 +65,9 @@ mod tests {
 
     #[test]
     fn case_3() {
-        let words = vec!["a".to_owned()];
+        let words = arr!["a"];
         let mut solution = Solution::group_anagrams(words);
-        let expected = vec![vec!["a".to_owned()]];
+        let expected = arr![["a"]];
         solution.sort_by_key(Vec::len);
         solution
             .iter_mut()
