@@ -1,21 +1,28 @@
-use std::cmp::Ordering;
-
 pub struct Solution;
+
+// use std::cmp::Ordering;
+//
+// impl Solution {
+//     #[allow(clippy::needless_pass_by_value)]
+//     pub fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
+//         let mut l = 0;
+//         let mut r = nums.len();
+//         while l != r {
+//             let m = (l + r) / 2;
+//             match nums[m].cmp(&target) {
+//                 Ordering::Less => l = m + 1,
+//                 Ordering::Equal => return i32::try_from(m).unwrap(),
+//                 Ordering::Greater => r = m,
+//             }
+//         }
+//         i32::try_from(l).unwrap()
+//     }
+// }
 
 impl Solution {
     #[allow(clippy::needless_pass_by_value)]
     pub fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
-        let mut l = 0;
-        let mut r = nums.len();
-        while l != r {
-            let m = (l + r) / 2;
-            match nums[m].cmp(&target) {
-                Ordering::Less => l = m + 1,
-                Ordering::Equal => return i32::try_from(m).unwrap(),
-                Ordering::Greater => r = m,
-            }
-        }
-        i32::try_from(l).unwrap()
+        i32::try_from(nums.partition_point(|x| x < &target)).unwrap()
     }
 }
 
