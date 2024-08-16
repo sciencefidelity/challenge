@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn find_peak_element(nums: Vec<i32>) -> i32 {
         let n = nums.len();
         if nums.len() == 1 || nums[0] > nums[1] {

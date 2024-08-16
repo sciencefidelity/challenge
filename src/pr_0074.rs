@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn search_matrix(matrix: Vec<Vec<i32>>, target: i32) -> bool {
         match matrix.binary_search_by(|num| num[0].cmp(&target)) {
             Ok(_) => true,
