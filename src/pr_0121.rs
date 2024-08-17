@@ -1,14 +1,17 @@
+use std::cmp::max;
+
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn max_profit(prices: Vec<i32>) -> i32 {
-        let mut max_profit = 0;
-        let mut min_price = i32::MAX;
-        for price in prices {
-            min_price = min_price.min(price);
-            max_profit = max_profit.max(price - min_price);
+        let (mut max_cur, mut max_so_far) = (0, 0);
+        for i in 1..prices.len() {
+            max_cur += prices[i] - prices[i - 1];
+            max_cur = max(0, max_cur);
+            max_so_far = max(max_cur, max_so_far);
         }
-        max_profit
+        max_so_far
     }
 }
 
