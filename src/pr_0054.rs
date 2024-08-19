@@ -71,29 +71,30 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use utils::arr;
 
     #[test]
     fn case_1() {
-        let matrix = vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]];
+        let matrix = arr![[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         let spiral_flatten = vec![1, 2, 3, 6, 9, 8, 7, 4, 5];
         assert_eq!(Solution::spiral_order(matrix), spiral_flatten);
     }
 
     #[test]
     fn case_2() {
-        let matrix = vec![vec![1, 2, 3, 4], vec![5, 6, 7, 8], vec![9, 10, 11, 12]];
+        let matrix = arr![[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]];
         let spiral_flatten = vec![1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7];
         assert_eq!(Solution::spiral_order(matrix), spiral_flatten);
     }
 
     #[test]
     fn case_3() {
-        let matrix = vec![
-            vec![1, 2, 3, 4, 5],
-            vec![6, 7, 8, 9, 10],
-            vec![11, 12, 13, 14, 15],
-            vec![16, 17, 18, 19, 20],
-            vec![21, 22, 23, 24, 25],
+        let matrix = arr![
+            [1, 2, 3, 4, 5],
+            [6, 7, 8, 9, 10],
+            [11, 12, 13, 14, 15],
+            [16, 17, 18, 19, 20],
+            [21, 22, 23, 24, 25]
         ];
         let spiral_flatten = vec![
             1, 2, 3, 4, 5, 10, 15, 20, 25, 24, 23, 22, 21, 16, 11, 6, 7, 8, 9, 14, 19, 18, 17, 12,
