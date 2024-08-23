@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn fraction_addition(expression: String) -> String {
         let (mut numer, mut denom) = (0, 1);
         let mut iter = expression.chars().peekable();
@@ -32,7 +33,7 @@ impl Solution {
                 }
             }
             numer = numer * curr_denom + curr_numer * denom;
-            denom = denom * curr_denom;
+            denom *= curr_denom;
         }
         let gcd = Self::gcd(numer, denom).abs();
         numer /= gcd;
@@ -40,7 +41,7 @@ impl Solution {
         format!("{numer}/{denom}")
     }
 
-    fn gcd(mut a: i32, mut b: i32) -> i32 {
+    const fn gcd(mut a: i32, mut b: i32) -> i32 {
         while b != 0 {
             (a, b) = (b, a % b);
         }
