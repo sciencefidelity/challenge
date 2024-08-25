@@ -1,25 +1,42 @@
 use b_tree::TreeNode;
-use std::{cell::RefCell, rc::Rc};
+use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 
 pub struct Solution;
 
 type OptNode = Option<Rc<RefCell<TreeNode>>>;
 
+// impl Solution {
+//     #[allow(clippy::needless_pass_by_value)]
+//     pub fn postorder_traversal(root: OptNode) -> Vec<i32> {
+//         let mut result = Vec::new();
+//         Self::postorder(&root, &mut output);
+//         result
+//     }
+//
+//     fn postorder(maybe_node: &OptNode, output: &mut Vec<i32>) {
+//         if let Some(node) = maybe_node {
+//             Self::postorder(&node.borrow().left, output);
+//             Self::postorder(&node.borrow().right, output);
+//             result.push(node.borrow().val);
+//         }
+//     }
+// }
+
 impl Solution {
     #[allow(clippy::needless_pass_by_value)]
     pub fn postorder_traversal(root: OptNode) -> Vec<i32> {
-        let mut output = Vec::new();
-        Self::recurse(&root, &mut output);
-        output
-    }
-
-    fn recurse(maybe_node: &OptNode, output: &mut Vec<i32>) {
-        if let Some(node) = maybe_node {
-            let node = node.borrow();
-            Self::recurse(&node.left, output);
-            Self::recurse(&node.right, output);
-            output.push(node.val);
+        let mut stack = Vec::from_iter(root);
+        let mut result = VecDeque::with_capacity(100);
+        while let Some(node) = stack.pop() {
+            if let Some(left) = node.borrow().left.clone() {
+                stack.push(left);
+            }
+            if let Some(right) = node.borrow().right.clone() {
+                stack.push(right);
+            }
+            result.push_front(node.borrow().val);
         }
+        result.into()
     }
 }
 
