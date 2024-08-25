@@ -196,6 +196,7 @@ pub mod pr_1190;
 pub mod pr_1207;
 pub mod pr_1248;
 pub mod pr_1334;
+pub mod pr_1372;
 pub mod pr_1380;
 pub mod pr_1382;
 pub mod pr_1395;
