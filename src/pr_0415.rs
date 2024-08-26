@@ -19,6 +19,9 @@ impl Solution {
             buf.push_front(sum % 10 + b'0');
             carry = sum / 10;
         }
+        if carry != 0 {
+            buf.push_front(b'0' + carry);
+        }
         String::from_utf8(buf.into()).unwrap()
     }
 }
@@ -48,6 +51,14 @@ mod tests {
         assert_eq!(
             Solution::add_strings("0".to_owned(), "0".to_owned()),
             "0".to_owned()
+        );
+    }
+
+    #[test]
+    fn case_4() {
+        assert_eq!(
+            Solution::add_strings("1".to_owned(), "9".to_owned()),
+            "10".to_owned()
         );
     }
 }
