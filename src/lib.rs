@@ -231,6 +231,7 @@ pub mod pr_1732;
 pub mod pr_1768;
 pub mod pr_1791;
 pub mod pr_1823;
+pub mod pr_1905;
 pub mod pr_1937;
 pub mod pr_1979;
 pub mod pr_2045;
