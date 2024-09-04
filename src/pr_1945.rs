@@ -3,7 +3,7 @@ pub struct Solution;
 impl Solution {
     #[allow(clippy::needless_pass_by_value)]
     pub fn get_lucky(s: String, mut k: i32) -> i32 {
-        let mut s = Self::string_to_number(&s.as_bytes());
+        let mut s = Self::string_to_number(s.as_bytes());
         while k > 1 {
             s = Self::sum_digits(s);
             k -= 1;
