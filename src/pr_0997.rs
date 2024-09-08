@@ -6,10 +6,10 @@ impl Solution {
             return 1;
         }
         let mut counter = vec![0; usize::try_from(n + 1).unwrap()];
-        trust.into_iter().for_each(|pair| {
+        for pair in trust {
             counter[usize::try_from(pair[0]).unwrap()] -= 1;
             counter[usize::try_from(pair[1]).unwrap()] += 1;
-        });
+        }
         counter
             .into_iter()
             .position(|cnt| cnt == n - 1)
