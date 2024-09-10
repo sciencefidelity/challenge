@@ -3,7 +3,7 @@ pub struct Solution;
 impl Solution {
     #[allow(clippy::needless_pass_by_value)]
     pub fn permute_unique(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
-        nums.sort();
+        nums.sort_unstable();
         let (mut res, n) = (Vec::new(), nums.len());
         Self::backtrack(&mut res, &nums, &mut Vec::new(), &mut vec![false; n]);
         res
