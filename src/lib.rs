@@ -4,7 +4,6 @@
     clippy::unwrap_used,
     clippy::missing_panics_doc
 )]
-pub mod pr_0001;
 pub mod pr_0002;
 pub mod pr_0003;
 pub mod pr_0006;
@@ -261,6 +260,7 @@ pub mod pr_2191;
 pub mod pr_2192;
 pub mod pr_2196;
 pub mod pr_2215;
+pub mod pr_2220;
 pub mod pr_2285;
 pub mod pr_2300;
 pub mod pr_2326;
