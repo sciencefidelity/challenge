@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn shortest_palindrome(s: String) -> String {
         let reversed_string: Vec<u8> = s.bytes().rev().collect();
         let len = s.len();
