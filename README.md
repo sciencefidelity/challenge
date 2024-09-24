@@ -1,3 +1,3 @@
-# Challenge
+# challenge
 
 Solutions.
