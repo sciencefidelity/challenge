@@ -23,7 +23,7 @@ impl MyCircularDeque {
             return false;
         }
         self.front = (self.front - 1 + self.capacity) % self.capacity;
-        self.array[self.front as usize] = value;
+        self.array[usize::try_from(self.front).unwrap()] = value;
         self.size += 1;
         true
     }
