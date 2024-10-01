@@ -28,7 +28,7 @@ impl CustomStack {
 
     fn increment(&mut self, k: i32, val: i32) {
         for num in self.stack.iter_mut().take(usize::try_from(k).unwrap()) {
-            *num += val
+            *num += val;
         }
     }
 }
