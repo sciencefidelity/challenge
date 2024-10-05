@@ -166,6 +166,7 @@ pub mod pr_0539;
 pub mod pr_0547;
 pub mod pr_0560;
 pub mod pr_0564;
+pub mod pr_0567;
 pub mod pr_0592;
 pub mod pr_0605;
 pub mod pr_0624;
