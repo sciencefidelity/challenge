@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn check_inclusion(s1: String, s2: String) -> bool {
         let (freqs1, freqs2) = (&mut [0; 26], &mut [0; 26]);
         for b in s1.bytes() {
