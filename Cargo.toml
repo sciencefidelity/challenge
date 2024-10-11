@@ -1,17 +1,27 @@
 [package]
 name = "challenge"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+description.workspace = true
+readme.workspace = true
+repository.workspace = true
+license.workspace = true
+
+[workspace]
+members = ["crates/b_tree", "crates/linked", "crates/utils"]
+resolver = "2"
+
+[workspace.package]
 version = "0.1.0"
-authors = ["Matt Cook <hello@mattcook.dev>"] 
+authors = ["Matt Cook <hello@mattcook.dev>"]
 edition = "2021"
 description = "Challenge solutions"
 readme = "README.md"
 repository = "https://github.com/sciencefidelity/challenge"
 license = "MIT or Apache-2.0"
 
-# [lints.rust]
-# unsafe_code = "forbid"
-
-[lints.clippy]
+[workspace.lints.clippy]
 enum_glob_use = "deny"
 pedantic = { level = "deny", priority = 1 }
 nursery = { level = "deny", priority = 2 }
@@ -25,7 +35,7 @@ panic = "abort"
 strip = "symbols"
 
 [dependencies]
-b_tree = { path = "b_tree" }
-linked = { path = "linked" }
+b_tree = { path = "crates/b_tree" }
+linked = { path = "crates/linked" }
 rand = "0.8.5"
-utils = { path = "utils" }
+utils = { path = "crates/utils" }
