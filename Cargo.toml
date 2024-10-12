@@ -8,6 +8,9 @@ readme.workspace = true
 repository.workspace = true
 license.workspace = true
 
+[lints]
+workspace = true
+
 [workspace]
 members = ["crates/b_tree", "crates/linked", "crates/utils"]
 resolver = "2"
