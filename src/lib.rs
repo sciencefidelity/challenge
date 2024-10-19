@@ -254,6 +254,7 @@ pub mod pr_1509;
 pub mod pr_1514;
 pub mod pr_1518;
 pub mod pr_1530;
+pub mod pr_1545;
 pub mod pr_1550;
 pub mod pr_1552;
 pub mod pr_1568;
