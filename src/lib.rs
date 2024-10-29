@@ -325,6 +325,7 @@ pub mod pr_2582;
 pub mod pr_2583;
 pub mod pr_2641;
 pub mod pr_2678;
+pub mod pr_2684;
 pub mod pr_2696;
 pub mod pr_2699;
 pub mod pr_2707;
