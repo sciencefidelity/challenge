@@ -359,3 +359,4 @@ pub mod pr_3194;
 pub mod pr_3206;
 pub mod pr_3207;
 pub mod pr_3217;
+pub mod pr_3254;
