@@ -353,6 +353,7 @@ pub mod pr_2707;
 pub mod pr_2751;
 pub mod pr_2807;
 pub mod pr_2914;
+pub mod pr_2924;
 pub mod pr_2938;
 pub mod pr_2976;
 pub mod pr_3011;
