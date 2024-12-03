@@ -1,6 +1,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn is_prefix_of_word(sentence: String, search_word: String) -> i32 {
         for (word, i) in sentence.split_whitespace().zip(1_i32..) {
             if word.starts_with(&search_word) {
