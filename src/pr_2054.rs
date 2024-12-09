@@ -1,3 +1,4 @@
+#![allow(clippy::type_complexity, clippy::needless_pass_by_value)]
 pub struct Solution;
 
 impl Solution {
@@ -7,8 +8,8 @@ impl Solution {
             .map(|event| ((event[0], event[2]), (event[1], event[2])))
             .unzip();
 
-        starts.sort();
-        ends.sort();
+        starts.sort_unstable();
+        ends.sort_unstable();
         let mut first_end_idx = 0;
         let mut cur_first_max = 0;
         let mut total_max = 0;
