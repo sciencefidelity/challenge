@@ -1,6 +1,8 @@
+#![allow(clippy::cast_sign_loss, clippy::cast_possible_truncation)]
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn find_target_sum_ways(nums: Vec<i32>, target: i32) -> i32 {
         let sum = nums.iter().sum::<i32>();
         let mut dp = vec![vec![0; (2 * sum + 1) as usize]; nums.len()];
