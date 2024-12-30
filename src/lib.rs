@@ -351,6 +351,7 @@ pub mod pr_2419;
 pub mod pr_2458;
 pub mod pr_2461;
 pub mod pr_2463;
+pub mod pr_2466;
 pub mod pr_2471;
 pub mod pr_2490;
 pub mod pr_2491;
