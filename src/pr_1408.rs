@@ -1,7 +1,7 @@
 pub struct Solution;
 
 impl Solution {
-    pub fn string_matching(mut words: Vec<String>) -> Vec<String> {
+    pub fn string_matching(words: Vec<String>) -> Vec<String> {
         let joined = words.join(" ");
         words
             .into_iter()
