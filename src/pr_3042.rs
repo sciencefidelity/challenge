@@ -1,6 +1,8 @@
+#![allow(clippy::cast_lossless)]
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::needless_pass_by_value)]
     pub fn count_prefix_suffix_pairs(words: Vec<String>) -> i32 {
         let mut count = 0;
         for i in 0..words.len() {
